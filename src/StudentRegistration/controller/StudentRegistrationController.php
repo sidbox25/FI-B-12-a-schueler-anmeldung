@@ -10,11 +10,9 @@ class StudentRegistrationController
     {
         $studentRegistrationBusinessFactory = new StudentRegistrationBusinessFactory();
 
-        $createStudentRegistrationBusiness = $studentRegistrationBusinessFactory->createStudentRegistrationBusiness();
+        $studentRegistrationBusiness = $studentRegistrationBusinessFactory->createStudentRegistrationBusiness();
         
-        
-        $this->view($createStudentRegistrationBusiness->getDaten());
-        
+        $this->view($studentRegistrationBusiness->getDaten()); #sortof like a echo
     }
 
     public function view($daten)

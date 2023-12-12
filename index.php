@@ -12,12 +12,15 @@
     ini_set('display_errors', 1);
     include 'autoload.php';
 
-    
+
+
     use src\StudentRegistration\controller\StudentRegistrationController;
-    echo "checkpoint 1";
+
     $controller = new StudentRegistrationController();
     $controller->StudentRegistrationViewAction();
 
+
+    
     ?>
 
 </body>
