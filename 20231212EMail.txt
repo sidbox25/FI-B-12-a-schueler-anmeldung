@@ -1,0 +1,114 @@
+Hallo Herr Tenbusch,
+
+2020 hatte meine Tochter (Informatikstudentin) die Anmelddatenbank für unsere Schule ehrenamtlich erstellt. Mir fehlen leider hierfür die fachlichen Voraussetzungen, so dass ich auch nur sehr eingeschränkt auskunftsfähig bin.
+
+Untenstehend hat meine Tochter zu den  technischen Fragen Stellung genommen. Ihre Schüler:innen können über Email direkt mit ihr Kontakt aufnehmen, falls weitere Fragen entstehen (Annemieke@verdenhalven.de).
+
+ 
+
+Zu a) nein, die Verträge sollen nicht dauerhaft im System gespeichert werden.
+
+Zu b) weil die Azubis häufiger die Praxen wechseln und die Klassenlehrer:innen die PDF ausgedruckt zu den Akten nehmen und dann die neue Praxis händisch eintragen.
+
+Zu c) Soweit eine weitere Formulierung in die pdf (max. 1 Seite) passt, ist das zeitgemäß und gerne einzufügen.
+
+Zu d) nein, die Azubis erhalten hier eine Schul-Email, so dass die private E-Mail keine Relevanz hat.
+
+e) gerne, wenn möglich.
+
+ 
+
+Ich hoffe, die Antworten helfen weiter. Ansonsten stehe ich ebenfalls jederzeit auch per Anruf (Festnetz und Mobil) für Fragen zur Verfügung (auch direkt von den SuS).
+
+
+
+Mit besten Grüßen
+
+Nicole Verdenhalven
+
+________________________
+
+T   030   99 28 90 55
+
+F   030   99 28 90 59
+M 0152 33 64 24 43
+
+N.Verdenhalven@rahel-hirsch.schule
+
+www.rahel-hirsch-schule.de
+
+ 
+
+ 
+
+ 
+
+ 
+
+Von: Annemieke Verdenhalven [mailto:annemieke@verdenhalven.de]
+Gesendet: Donnerstag, 7. Dezember 2023 14:40
+An: Nicole Verdenhalven <n.verdenhalven@rahel-hirsch.schule>
+Betreff: AW: Anfrage wegen Ihrer Software
+
+ 
+
+    Zum jetzigen Stand gibt es außer dem FPDF Skript kein Code von unserer Seite, es wurde lediglich mit Formtools gearbeitet. Ob es davon den Code Open Source gibt ist uns nicht bekannt.
+    Für das Auslesen der Tabelle gibt es lediglich das angefügte Script (Auslesen.php).
+    Wir sind durchaus auch offen für eine neue Entwicklung abseits von Formtools, solange die Funktionalitäten erhalten bleiben.
+    Die Datenbank Struktur ist im Anhang ersichtlich (phpMyAdmin …). Es ist eine sehr einfache Struktur ohne Verschachtelungen.
+    Das aktuelle FPDF Script ist im Anhang (Anmeldung.php)
+
+ 
+
+Von: Nicole Verdenhalven <n.verdenhalven@rahel-hirsch.schule>
+Gesendet: Dienstag, 21. November 2023 17:55
+An: Verdenhalven Simon <Simon.Verdenhalven@grundig-gbs.com>; Annemieke Verdenhalven <annemieke@verdenhalven.de>
+Betreff: WG: Anfrage wegen Ihrer Software
+
+ 
+
+Hallo Mieke,
+
+hallo Simon,
+
+könnt ihr mir zu den Punkten 1-3 weiterhelfen?
+
+Steht davon bereits etwas auf den Infotext, den ich der Schule geschickt hatte? Also eure Infos…J
+
+ 
+
+LG Nicole
+
+Von: Tim Tenbusch [mailto:tenbusch@oszimt.de]
+Gesendet: Dienstag, 21. November 2023 12:43
+An: n.verdenhalven@rahel-hirsch.schule
+Betreff: Re: Anfrage wegen Ihrer Software
+
+ 
+
+Hallo Frau Verdenhalven,
+
+zwei motivierte Projektgruppen haben heute die Arbeit an dem Projekt Anpassung der Onlineanmeldung aufgenommen. Die Schülerinnen und Schüler einer Fachinformatikerklasse haben die Anforderungen analysiert und planen gerade das Projekt. Unsere Lernenden sind immer alle 3 Wochen für eine ganze Woche da und unser Projektunterricht ist immer Dienstags und Mittwochs. Wir organisieren uns so, dass wir in der Regel keine zeitkritischen Antworten von Ihnen brauchen, Sie also immer ca. 2 Wochen Zeit für die Beantwortung unserer Detailfragen haben. Daher bitte ich Sie uns bis 10.12. folgende Informationen zukommen zu lassen.
+
+1. Wir brauchen für eine Weiterentwicklung des Quellcodes ggf. den Link zum Repository oder den Code, damit wir ein von Ihrer Schule komplett unabhängiges Testsystem aufbauen können. Die konkreten Zugangsdaten zum Ionos können gerne erstmal rausgelöscht werden.
+
+2. Wir brauchen die Struktur der Datenbank (aber nicht die Daten). Wir haben viele Rückfragen zur konkreten Datenstruktur. (Hier reicht uns auch ein ER-Diagramm oder ein UML Diagramm oder die Tabellenüberschriften in der Datenbank).
+
+3. Das aktuelle FPDF Skript.
+
+4. Außerdem haben wir mehrere Rückfragen gesammelt:
+
+a) Sollen die Ausbildungsverträge und die generierten PDF Dateien dauerhaft im System gespeichert werden oder sollen diese nach erfolgreicher Bearbeitung gelöscht werden.
+
+b) Wieso wurden in den FormTool für insgesamt 3 Betriebe Datenfelder angelegt?
+
+c) Soll eine Umbenennung von Vater/Mutter möglich sein, um Kinder aus gleichgeschlechtlichen Ehen abzubilden?
+
+d) Soll E-Mailadresse der Azubis ein Pflichtfeld sein?
+
+e) Soll eine Anmeldungsbestätigung in PDF-Form auch für den Azubi generiert werden?
+
+Wir freuen uns auf Ihre Antwort.
+
+Mit freundlichen Grüßen
+Tim Tenbusch & die Klasse FA-B 12
