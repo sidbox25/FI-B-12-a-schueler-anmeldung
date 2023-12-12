@@ -1,8 +1,8 @@
 <?php
 
-namespace src\StudentRegistration\controller;
+namespace src\StudentRegistration\Controller;
 use src\StudentRegistration\Business\StudentRegistrationBusinessFactory;
-use src\StudentRegistration\view\StudentRegistrationView;
+use src\StudentRegistration\View\StudentRegistrationView;
 class StudentRegistrationController
 {
 
