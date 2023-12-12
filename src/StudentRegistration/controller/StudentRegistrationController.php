@@ -2,11 +2,11 @@
 
 namespace src\StudentRegistration\controller;
 use src\StudentRegistration\Business\StudentRegistrationBusinessFactory;
-use src\StudentRegistration\view\studentanmeldeform;
+use src\StudentRegistration\view\StudentRegistrationView;
 class StudentRegistrationController
 {
 
-    public function studentanmeldeformAction()
+    public function StudentRegistrationViewAction()
     {
         $studentRegistrationBusinessFactory = new StudentRegistrationBusinessFactory();
 
@@ -19,7 +19,9 @@ class StudentRegistrationController
 
     public function view($daten)
     {
-        $studentanmeldeform = new studentanmeldeform();
-        return $studentanmeldeform->createtable($daten);
+        $StudentRegistrationView = new StudentRegistrationView();
+        return $StudentRegistrationView->createtable($daten);
     }
 }
+
+#StudentRegistrationView

@@ -16,7 +16,7 @@
     use src\StudentRegistration\controller\StudentRegistrationController;
     echo "checkpoint 1";
     $controller = new StudentRegistrationController();
-    $controller->studentanmeldeformAction();
+    $controller->StudentRegistrationViewAction();
 
     ?>
 
