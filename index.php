@@ -25,7 +25,17 @@
         echo "honhonhon";
     }
 
-    
+    use src\StudentRegistration\Controller\StudentSchoolVisitsController;
+    if($_SERVER['REQUEST_URI'] === '/schulbesuch') {
+        $studentSchoolVisitsController = new StudentSchoolVisitsController();
+        $studentSchoolVisitsController->showStudentSchoolVisitsAction();
+    }
+
+    if($_SERVER['REQUEST_URI'] === '/schultage') {
+        $studentSchoolVisitsController = new StudentSchoolVisitsController();
+        $studentSchoolVisitsController->saveSchoolVisitsDataAction();
+    }
+
     ?>
 
 </body>
