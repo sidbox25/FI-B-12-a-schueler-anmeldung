@@ -3,6 +3,11 @@
 namespace src\StudentRegistration\Business;
 class StudentRegistrationBusiness
 {
+    public function fileServerName():string
+    {
+        $uploadDirectory = '//PFAD//FILESERVER'; // Pfad zum Fileserver
+        return $uploadDirectory;
+    }
 
     public function __construct()
     {
@@ -24,4 +29,8 @@ class StudentRegistrationBusiness
 
         return $daten;
     }
+
+   
+
+   
 }
