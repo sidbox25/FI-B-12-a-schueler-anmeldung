@@ -1,6 +1,6 @@
 <?php
 
-namespace src\StudentRegistration\View;
+namespace src\StudentRegistration\view;
 class StudentRegistrationView
 {
 

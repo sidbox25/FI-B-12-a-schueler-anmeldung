@@ -10,10 +10,11 @@
     <p> u are stoopid hon hon hon(mocks u in french)</p>
     <?php
 
-
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
     include 'autoload.php';
+
+    use src\StudentPersonalData\Controller\StudentPersonalDataController;
     use src\StudentRegistration\Controller\StudentRegistrationController;
 
 
@@ -35,6 +36,14 @@
         $studentSchoolVisitsController = new StudentSchoolVisitsController();
         $studentSchoolVisitsController->saveSchoolVisitsDataAction();
     }
+
+
+    if($_SERVER['REQUEST_URI'] === '/personalData') {
+        $studentPersonalDataController = new StudentPersonalDataController();
+        $studentPersonalDataController->studentPersonalDataViewAction();
+    }
+
+
 
     ?>
 
