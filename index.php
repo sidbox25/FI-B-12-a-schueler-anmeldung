@@ -14,7 +14,7 @@
 
 
 
-    use src\StudentRegistration\controller\StudentRegistrationController;
+    use src\StudentRegistration\Controller\StudentRegistrationController;
 
     $controller = new StudentRegistrationController();
     $controller->StudentRegistrationViewAction();
