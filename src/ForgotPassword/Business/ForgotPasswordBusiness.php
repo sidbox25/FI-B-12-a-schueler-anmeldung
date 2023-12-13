@@ -1,13 +1,8 @@
 <?php
 
-namespace src\StudentRegistration\Business;
-class StudentRegistrationBusiness
+namespace src\ForgotPassword\Business;
+class ForgotPasswordBusiness
 {
-    public function fileServerName():string
-    {
-        $uploadDirectory = '//PFAD//FILESERVER'; // Pfad zum Fileserver
-        return $uploadDirectory;
-    }
 
     public function __construct()
     {
@@ -29,8 +24,4 @@ class StudentRegistrationBusiness
 
         return $daten;
     }
-
-   
-
-   
 }

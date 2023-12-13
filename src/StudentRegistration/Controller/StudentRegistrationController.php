@@ -3,8 +3,10 @@
 namespace src\StudentRegistration\Controller;
 use src\StudentRegistration\Business\StudentRegistrationBusinessFactory;
 use src\StudentRegistration\View\StudentRegistrationView;
+
 class StudentRegistrationController
 {
+
 
     public function StudentRegistrationViewAction()
     {
