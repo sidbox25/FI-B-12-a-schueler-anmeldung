@@ -1,6 +1,7 @@
 <?php
 
 namespace src\StudentRegistration\Business;
+use src\StudentRegistration\Persistence\StudentRegistrationEntityManager;
 class StudentRegistrationBusiness
 {
     public function fileServerName():string
@@ -20,6 +21,10 @@ class StudentRegistrationBusiness
 
     public function getDaten(): array
     {
+        #todo make work
+        #$entityManager = new StudentRegistrationEntityManager();
+        #$tempDaten = $entityManager->getAllStudents();
+        
         $daten = array(
             array("Name", "Alter", "Stadt"),
             array("Max Mustermann", 25, "Musterstadt"),

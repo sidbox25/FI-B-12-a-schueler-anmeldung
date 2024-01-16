@@ -28,7 +28,9 @@
     if($_SERVER['REQUEST_URI'] === '/boo') {
         $connection = (new Connector())->getConnection();
         var_dump($connection);
-        $stm = $connection->prepare("INSERT INTO test.test2 (user) VALUES ('sidney') ");
+        $stm = $connection->prepare("INSERT INTO test.test2 (user) VALUES (:name) ");
+        $name = "sidney";
+        $stm->bindParam(':name',$name);
         $stm->execute();
     } 
     if($_SERVER['REQUEST_URI'] === '/schulbesuch') {
