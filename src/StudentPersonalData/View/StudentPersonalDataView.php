@@ -66,9 +66,15 @@ OSZIMT Schule
     <p>Ich erteile hiermit der Rahel-Hirsch-Schule die jederzeit widerrufliche Erlaubnis, für shculische Zwecke (z.B auf der Webseite der Schule, in Schulbroschüren, etc.) Fotos oder Abbildungen, auf denen ich zu erkennen bin, zu verwenden</p>
     </div>
 
+    <!-- Upload file -->
+    <h2>Upload a file</h2>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file"  accept=".pdf,.jpg,.png"/>
+        <br /><br />
+        <button type="submit" name="submit">Upload</button>
+    </form>
 </div>
-    
-    <input type="submit" value="Submit">
+
   </form>
 </div>
 <style>

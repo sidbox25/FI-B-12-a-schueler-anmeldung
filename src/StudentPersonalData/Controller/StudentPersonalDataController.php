@@ -10,6 +10,8 @@ class StudentPersonalDataController
         $StudentPersonalDataBusinessFactory = new StudentPersonalDataBusinessFactory();
 
         $StudentPersonalDataBusiness = $StudentPersonalDataBusinessFactory->createStudentPersonalDataBusiness();
+
+       $saveFiles = $StudentPersonalDataBusiness->saveUploadedFile();
         
         $this->view($StudentPersonalDataBusiness->getDaten()); #sortof like a echo
     }

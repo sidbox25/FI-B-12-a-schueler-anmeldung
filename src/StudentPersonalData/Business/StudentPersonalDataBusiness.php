@@ -1,6 +1,7 @@
 <?php
 
 namespace src\StudentPersonalData\Business;
+
 class StudentPersonalDataBusiness
 {
 
@@ -23,5 +24,15 @@ class StudentPersonalDataBusiness
         );
 
         return $daten;
+    }
+
+    public function saveUploadedFile()
+    {
+        $updloadedFile = $_FILES["file"];
+        if (isset($_POST["submit"])) {
+            // save file when database is done !
+        }
+        
+        return "";
     }
 }
