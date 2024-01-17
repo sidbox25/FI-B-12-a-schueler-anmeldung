@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
     <title>Schueler Anmeldung vervaltungs software</title>
-    <link rel="stylesheet" href="/src/Main/View/assets/main.layout.css">
+    <link rel="stylesheet" href="/src/HomePage/HomePageView/assets/main.layout.css">
 </head>
 <body>
     <?php
@@ -49,6 +49,11 @@
     if($_SERVER['REQUEST_URI'] === '/personalData') {
         $studentPersonalDataController = new StudentPersonalDataController();
         $studentPersonalDataController->studentPersonalDataViewAction();
+    }
+
+    if($_SERVER['REQUEST_URI'] === '/geschafft') {
+        $geschafftTabController = new GeschafftTabController();
+        $geschafftTabController->showGeschafftTabViewAction();
     }
 
 

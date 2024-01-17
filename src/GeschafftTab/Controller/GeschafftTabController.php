@@ -6,7 +6,7 @@ use src\GeschafftTab\View\GeschafftTabView;
 class GeschafftTabController
 {
 
-    public function GeschafftTabViewAction()
+    public function showGeschafftTabViewAction()
     {
         $GeschafftTabBusinessFactory = new GeschafftTabBusinessFactory();
 
