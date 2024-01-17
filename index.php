@@ -23,6 +23,7 @@
     use src\StudentPersonalData\Controller\StudentPersonalDataController;
     use src\StudentRegistration\Controller\StudentRegistrationController;
     use src\StudentRegistration\Controller\StudentSchoolVisitsController;
+    //use src\UploadPdf\Controller\StudentRegistrationApprenticeshipController;
     use src\Core\Connector;
 
     if ($_SERVER['REQUEST_URI'] === '/') {
@@ -59,6 +60,11 @@
         $geschafftTabController = new GeschafftTabController();
         $geschafftTabController->showGeschafftTabViewAction();
     }
+
+    // if ($_SERVER['REQUEST_URI'] === '/weiter') {
+    //$studentRegistrationApprenticeshipController = new \src\UploadPdf\Controller\StudentRegistrationApprenticeshipController();
+    //$studentRegistrationApprenticeshipController->StudentRegistrationApprenticeshipViewAction();
+    //}
 
 
     ?>
