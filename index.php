@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="/src/HomePage/HomePageView/assets/main.layout.css">
 </head>
 <body>
+<header>
+    <img id="logo" src="src/HomePage/HomePageView/assets/logo.png"">
+    <h1 class="header-text">Anmeldung zur Ausbildung als MFA / ZFA an der Rahel-Hirsch-Schule</h1>
+</header>
     <?php
 
     error_reporting(E_ALL);
