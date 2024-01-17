@@ -15,11 +15,11 @@ OSZIMT Schule
   <form class="personal_data">
   <div class="fname_row">
     <label for="fname">Vorname</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <input type="text" id="fname" name="firstname" placeholder="Your name...">
    </div>
    <div class="lname_row">
     <label for="lname">Familienname</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <input type="text" id="lname" name="lastname" placeholder="Your last name...">
     </div>
 
   <p>Geschlecht:</p>
@@ -31,7 +31,7 @@ OSZIMT Schule
 <input type="radio" id="divers" name="fav_language" value="JavaScript">
 
    <div class="birthday_row">
-    <label for="birthday">Geboren Am</label>
+    <label for="birthday">Geboren am</label>
     <input type="text" id="birthday"  placeholder="Your birthday..">
     </div>
     
