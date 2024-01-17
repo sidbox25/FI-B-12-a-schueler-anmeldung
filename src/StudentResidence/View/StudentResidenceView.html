@@ -1,0 +1,66 @@
+<header class="header">
+    Ihre Adresse
+</header>
+
+<form class="form" id="frm_page">
+
+    <div class="field">
+        <label for="postal">Postleitzahl</label>
+        <input id="postal" type="text" required="true">
+    </div>
+
+    <div class="field">
+        <label for="residence">Wohnort</label>
+        <input id="residence" type="text" required="true">
+    </div>
+
+    <div class="field">
+        <label for="street">Postleitzahl</label>
+        <input id="street" type="text" required="true">
+    </div>
+
+    <div class="field">
+        <label for="house_num">Hausnummer</label>
+        <input id="house_num" type="number" required="true">
+    </div>
+
+    <div class="field">
+        <label for="notfall">Notfallkontakt</label>
+        <input id="notfall" type="number" required="true">
+    </div>
+
+    <div class="field">
+        <label for="notfall_tele">Telefon von Notfallkontakt</label>
+        <input id="notfall_tele" type="number" required="true">
+    </div>
+
+    <div class="field">
+        <button type="submit">Weiter</button>
+    </div>
+
+</form>
+
+<!-- Separate css and html -->
+<style>
+    .field {
+        width: 300px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        background: gainsboro;
+        padding: 10px
+    }
+
+    .header {
+        background-color: orange;
+        padding: 10px;
+    }
+</style>
