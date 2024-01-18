@@ -9,7 +9,7 @@ class HomePageController
 
     public function showAction()
     {
-        $this->view(); #sortof like a echo
+        $this->view();
     }
 
     public function view()
@@ -17,7 +17,4 @@ class HomePageController
         $mainView = new HomePageView();
         $mainView->render();
     }
-
 }
-
-#StudentRegistrationView
