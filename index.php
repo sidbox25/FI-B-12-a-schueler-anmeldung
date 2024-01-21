@@ -25,6 +25,7 @@
     use src\StudentRegistration\Controller\StudentRegistrationController;
     use src\StudentRegistration\Controller\StudentSchoolVisitsController;
     //use src\UploadPdf\Controller\StudentRegistrationApprenticeshipController;
+    use src\StudentResidence\Controller\StudentResidenceController;
     use src\Core\Connector;
 
     if ($_SERVER['REQUEST_URI'] === '/') {
@@ -60,6 +61,11 @@
     if($_SERVER['REQUEST_URI'] === '/geschafft') {
         $geschafftTabController = new GeschafftTabController();
         $geschafftTabController->showGeschafftTabViewAction();
+    }
+
+    if($_SERVER['REQUEST_URI'] === '/residence') {
+        $studentResidenceController = new StudentResidenceController();
+        $studentResidenceController->studentResidenceViewAction();
     }
 
     // if ($_SERVER['REQUEST_URI'] === '/weiter') {
