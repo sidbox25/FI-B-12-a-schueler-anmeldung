@@ -1,9 +1,11 @@
-
+html {
+    height: 100%;
+}
 body {
     font-family: Arial, sans-serif;
-    padding: 10px;
     background-color: rgba(194, 189, 189, 0.43);
     margin: 0;
+    height: 100%;
 }
 
 #logo {
@@ -13,7 +15,22 @@ body {
     margin-right: 10px
 }
 
+.main-container {
+    padding: 10px;
+    height: 98%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "header"
+    "main";
+    grid-template-rows: 20% 75%;
+    margin: 0;
+    justify-content: stretch;
+    row-gap: 3rem;
+}
+
 header {
+    grid-area: header;
     padding: 20px;
     text-align: center;
     display: flex;
@@ -31,9 +48,7 @@ header {
 }
 
 main {
-    margin-top: 10px;
     height: 100%;
-
 }
 
 .login-btn {
@@ -43,10 +58,12 @@ main {
     border-radius: 5px;
     font-size:  3rem;
     font-weight: bold;
-    padding: 2rem 7rem 2rem 7rem;
+    padding: 1.5rem 7rem 1.5rem 7rem;
     margin-bottom: 30px;
 }
 .homepage-container {
+    grid-area: footer;
+    height: 100%;
     background: linear-gradient(to bottom, rgba(205, 103, 67, 0.68), rgba(19, 18, 18, 0.66), rgba(44, 32, 37, 0.66), rgba(109, 66, 90, 0.63)), url("https://berliner-abendblatt.de/wp-content/uploads/2023/03/Rahel-Hirsch-Schule-aussen.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -56,6 +73,5 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 50.3rem;
 }
 

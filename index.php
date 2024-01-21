@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="/src/HomePage/HomePageView/assets/main.layout.css">
 </head>
 <body>
-<header>
-    <img id="logo" src="src/HomePage/HomePageView/assets/logo.png"">
-    <h1 class="header-text">Anmeldung zur Ausbildung als MFA / ZFA an der Rahel-Hirsch-Schule</h1>
-</header>
+<div class="main-container">
+    <header>
+        <img id="logo" src="src/HomePage/HomePageView/assets/logo.png"">
+        <h1 class="header-text">Anmeldung zur Ausbildung als MFA / ZFA an der Rahel-Hirsch-Schule</h1>
+    </header>
     <?php
 
     error_reporting(E_ALL);
@@ -23,6 +24,7 @@
     use src\StudentPersonalData\Controller\StudentPersonalDataController;
     use src\StudentRegistration\Controller\StudentRegistrationController;
     use src\StudentRegistration\Controller\StudentSchoolVisitsController;
+    //use src\UploadPdf\Controller\StudentRegistrationApprenticeshipController;
     use src\Core\Connector;
 
     if ($_SERVER['REQUEST_URI'] === '/') {
@@ -60,7 +62,13 @@
         $geschafftTabController->showGeschafftTabViewAction();
     }
 
+    // if ($_SERVER['REQUEST_URI'] === '/weiter') {
+    //$studentRegistrationApprenticeshipController = new \src\UploadPdf\Controller\StudentRegistrationApprenticeshipController();
+    //$studentRegistrationApprenticeshipController->StudentRegistrationApprenticeshipViewAction();
+    //}
+
 
     ?>
+</div>
 </body>
 </html>

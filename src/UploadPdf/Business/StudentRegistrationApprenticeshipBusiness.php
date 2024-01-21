@@ -13,10 +13,7 @@ class StudentRegistrationApprenticeshipBusiness
     {
     }
 
-    public function foo(): string
-    {
-        return "bar";
-    }
+
 
     public function getDaten(): array
     {

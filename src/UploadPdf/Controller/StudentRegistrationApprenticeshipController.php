@@ -1,4 +1,5 @@
 <?php
+
 namespace src\StudentRegistration\Controller;
 
 use src\StudentRegistration\View\StudentRegistrationApprenticeshipView;
@@ -7,26 +8,20 @@ use src\StudentRegistration\Business\StudentRegistrationApprenticeshipBusinessFa
 class StudentRegistrationApprenticeController
 {
     private $uploadDirectory;
-    public function StudentRegistrationApprenticeViewAction()
-    {  
+
+    public function studentRegistrationApprenticeViewAction()
+    {
         $studentRegistrationBusinessFactory = new StudentRegistrationApprenticeshipBusinessFactory();
         $studentRegistrationBusiness = $studentRegistrationBusinessFactory->createStudentRegistrationBusiness();
         $this->uploadDirectory = $studentRegistrationBusiness->fileServerName();
-        $this->view($this->uploadDirectory);    
-    //  $studentRegistrationBusinessFactory = new StudentRegistrationBusinessFactory();
-    //  $studentRegistrationBusiness = $studentRegistrationBusinessFactory->createStudentRegistrationBusiness();
-    //  $this->view($studentRegistrationBusiness->fileServerName());
+        $this->viewAction();    
     }
-    public function view($uploadDirectory)
+
+    public function viewAction()
     {
         $StudentRegistrationApprenticeshipView = new StudentRegistrationApprenticeshipView();
-        return $StudentRegistrationApprenticeshipView->renderFileUploadForm();
-        
+        $StudentRegistrationApprenticeshipView->renderFileUploadForm($this->uploadDirectory);
     }
-    // public function __construct()
-    // {
-    //     $this->uploadDirectory = 'C:TestFileserver'; // Pfad zum Fileserver
-    // }
 
     public function handleFileUpload()
     {
@@ -64,6 +59,5 @@ class StudentRegistrationApprenticeController
             }
          }     
     }
-
 }
-?>
+
