@@ -1,19 +1,17 @@
 <?php
 
-namespace src\StudentRegistration\Business;
-class StudentRegistrationApprenticeshipBusiness
+namespace src\StudentResidence\Business;
+class StudentResidenceBusiness
 {
-    public function fileServerName():string
-    {
-        $uploadDirectory = '//PFAD//FILESERVER'; // Pfad zum Fileserver
-        return $uploadDirectory;
-    }
 
     public function __construct()
     {
     }
 
-
+    public function foo(): string
+    {
+        return "bar";
+    }
 
     public function getDaten(): array
     {
@@ -26,8 +24,4 @@ class StudentRegistrationApprenticeshipBusiness
 
         return $daten;
     }
-
-   
-
-   
 }
