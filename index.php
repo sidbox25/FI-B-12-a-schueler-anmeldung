@@ -26,6 +26,7 @@
     use src\StudentRegistration\Controller\StudentSchoolVisitsController;
     //use src\UploadPdf\Controller\StudentRegistrationApprenticeshipController;
     use src\StudentResidence\Controller\StudentResidenceController;
+    use src\StudentAge\Controller\StudentAgeController;
     use src\Core\Connector;
 
     if ($_SERVER['REQUEST_URI'] === '/') {
@@ -66,6 +67,11 @@
     if($_SERVER['REQUEST_URI'] === '/wohnort') {
         $studentResidenceController = new StudentResidenceController();
         $studentResidenceController->studentResidenceViewAction();
+    }
+
+    if($_SERVER['REQUEST_URI'] === '/alter') {
+        $studentAgeController = new StudentAgeController();
+        $studentAgeController->studentAgeViewAction();
     }
 
     // if ($_SERVER['REQUEST_URI'] === '/weiter') {

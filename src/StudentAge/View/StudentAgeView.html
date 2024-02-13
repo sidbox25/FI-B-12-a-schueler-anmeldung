@@ -1,0 +1,126 @@
+<div class="container">
+
+    <form class="form" id="frm_page">
+
+        <h1>Unter 18?</h1>
+
+        <div class="field_group">
+
+            <div class="field">
+                <label for="firstname_mother">Vorname Mutter</label>
+                <input id="firstname_mother" type="text" required="true" placeholder="Vorname Mutter..">
+            </div>
+
+            <div class="field">
+                <label for="lastname_mother">Nachname Mutter</label>
+                <input id="lastname_mother" type="text" required="true" placeholder="Nachname Mutter..">
+            </div>
+
+            <div class="field">
+                <label for="telefon_mother">Telefon von Mutter</label>
+                <input id="telefon_mother" type="tel" required="true" placeholder="Telefonnummer der Mutter..">
+            </div>
+
+        </div>
+
+        <div class="field_group">
+
+            <div class="field">
+                <label for="firstname_father">Vorname Vater</label>
+                <input id="firstname_father" type="text" required="true" placeholder="Vorname Vater..">
+            </div>
+
+            <div class="field">
+                <label for="lastname_father">Nachname Vater</label>
+                <input id="lastname_father" type="text" required="true" placeholder="Nachname Vater..">
+            </div>
+
+            <div class="field">
+                <label for="telefon_father">Telefon von Vater</label>
+                <input id="telefon_father" type="tel" required="true" placeholder="Telefonnummer der Vater..">
+            </div>
+        </div>
+
+        <div class="field_group">
+
+            <div class="field">
+                <label for="address_mother_father">Adresse Mutter-Vater</label>
+                <input id="address_mother_father" type="tel"
+                    placeholder="Adresse der Mutter oder des Vaters..">
+            </div>
+
+        </div>
+
+        <div class="field_group">
+
+            <div class="field">
+                <label for="firstname_guardian">Vorname Erziehungsberechtigter</label>
+                <input id="firstname_guardian" type="text"
+                    placeholder="Vorname Erziehungsberechtigter..">
+            </div>
+
+            <div class="field">
+                <label for="lastname_guardian">Nachname Erziehungsberechtigter</label>
+                <input id="lastname_guardian" type="text"
+                    placeholder="Nachname Erziehungsberechtigter..">
+            </div>
+
+            <div class="field">
+                <label for="telefon_guardian">Telefon von Erziehungsberechtigter</label>
+                <input id="telefon_guardian" type="tel"
+                    placeholder="Telefonnummer der Erziehungsberechtigter..">
+            </div>
+
+            <div>
+                <button type="submit">Weiter</button>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+<!-- TODO Separate css and html -->
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        height: inherit !important;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        background: white;
+        padding: 40px;
+    }
+
+    .field {
+        width: 100%;
+        height: 75px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .field_group {
+        margin-bottom: 20px;
+    }
+
+    input[type=text],
+    input[type=tel],
+    input[type=number] {
+        height: 30px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+</style>
