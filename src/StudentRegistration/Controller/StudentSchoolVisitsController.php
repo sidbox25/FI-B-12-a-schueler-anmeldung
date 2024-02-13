@@ -8,13 +8,8 @@ class StudentSchoolVisitsController
 
     public function showStudentSchoolVisitsAction()
     {
-        $this->view(); #sortof like a echo
-    }
-
-    public function view()
-    {
         $StudentSchoolVisitsView = new StudentSchoolVisitsView();
-        return $StudentSchoolVisitsView->showForm();
+        $StudentSchoolVisitsView->showForm();
     }
 
     public function saveSchoolVisitsDataAction()

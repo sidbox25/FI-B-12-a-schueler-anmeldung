@@ -20,7 +20,7 @@ class StudentRegistrationController
     public function view($daten)
     {
         $StudentRegistrationView = new StudentRegistrationView();
-        return $StudentRegistrationView->createtable($daten);
+        $StudentRegistrationView->createtable($daten);
     }
 }
 

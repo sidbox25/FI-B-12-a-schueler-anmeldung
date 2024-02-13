@@ -22,6 +22,7 @@
     use src\GeschafftTab\Controller\GeschafftTabController;
     use src\HomePage\HomePageController\HomePageController;
     use src\StudentPersonalData\Controller\StudentPersonalDataController;
+    use src\StudentRegistration\Controller\StudentRegistrationApprenticeController;
     use src\StudentRegistration\Controller\StudentRegistrationController;
     use src\StudentRegistration\Controller\StudentSchoolVisitsController;
     //use src\UploadPdf\Controller\StudentRegistrationApprenticeshipController;
@@ -50,8 +51,8 @@
         $studentSchoolVisitsController->showStudentSchoolVisitsAction();
     }
     if($_SERVER['REQUEST_URI'] === '/schultage') {
-        $studentSchoolVisitsController = new StudentSchoolVisitsController();
-        $studentSchoolVisitsController->saveSchoolVisitsDataAction();
+        $studentSchoolVisitsController = new StudentRegistrationApprenticeController();
+        $studentSchoolVisitsController->studentRegistrationApprenticeViewAction();
     }
     if($_SERVER['REQUEST_URI'] === '/persoenliche_daten') {
         $studentPersonalDataController = new StudentPersonalDataController();

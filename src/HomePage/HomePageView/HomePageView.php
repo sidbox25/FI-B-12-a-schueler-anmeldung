@@ -10,9 +10,9 @@ class HomePageView
         echo '
         <main>
         <div class="homepage-container">
-            <button class="login-btn">
+            <a class="login-btn" href="/schulbesuch">
                 Anmelden
-            </button>
+            </a>
          </div>
         </main>
 
