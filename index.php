@@ -53,7 +53,7 @@
         $studentSchoolVisitsController = new StudentSchoolVisitsController();
         $studentSchoolVisitsController->saveSchoolVisitsDataAction();
     }
-    if($_SERVER['REQUEST_URI'] === '/personalData') {
+    if($_SERVER['REQUEST_URI'] === '/persoenliche_daten') {
         $studentPersonalDataController = new StudentPersonalDataController();
         $studentPersonalDataController->studentPersonalDataViewAction();
     }
@@ -63,7 +63,7 @@
         $geschafftTabController->showGeschafftTabViewAction();
     }
 
-    if($_SERVER['REQUEST_URI'] === '/residence') {
+    if($_SERVER['REQUEST_URI'] === '/wohnort') {
         $studentResidenceController = new StudentResidenceController();
         $studentResidenceController->studentResidenceViewAction();
     }
