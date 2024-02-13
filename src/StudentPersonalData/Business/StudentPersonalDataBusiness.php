@@ -28,9 +28,11 @@ class StudentPersonalDataBusiness
 
     public function saveUploadedFile()
     {
+        if (isset($_FILES["file"])) {
         $updloadedFile = $_FILES["file"];
         if (isset($_POST["submit"])) {
             // save file when database is done !
+        }
         }
         
         return "";

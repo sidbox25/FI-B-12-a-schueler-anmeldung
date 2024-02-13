@@ -60,6 +60,7 @@ main {
     font-weight: bold;
     padding: 1.5rem 7rem 1.5rem 7rem;
     margin-bottom: 30px;
+    text-decoration: none;
 }
 .homepage-container {
     grid-area: footer;
