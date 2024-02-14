@@ -6,138 +6,121 @@ class StudentPersonalDataView
     public function createStudentPersonalDataInputForm(array $data)
     {
         echo '
-<div class="header_personal_data">
-OSZIMT Schule
-</div>
-<div class="personal_data_container" >
+<main class="personal_container">
 <h1>Persönliches</h1>
-<h4>Personal Daten</h4>
-  <form class="personal_data">
-  <div class="fname_row">
-    <label for="fname">Vorname</label>
-    <input type="text" id="fname" name="firstname" placeholder="Ihr Vorname">
-   </div>
-   <div class="lname_row">
-    <label for="lname">Familienname</label>
-    <input type="text" id="lname" name="lastname" placeholder="Ihr Nachname">
-    </div>
+<div class="header_personal_data"></div>
+<div class="personal_data_body">
 
-<fieldset>
+  <form class="personal_data_form">
+  <h4>Personal Daten</h4>
+  <label for="fname">Vorname</label>
+  <input type="text" id="fname" name="firstname" placeholder="Vorname...">  
+  
+  <label for="lname">Vorname</label>
+  <input type="text" id="lname" name="lastname" placeholder="Nachname...">
+
+  <label for="email_address">Email </label>
+  <input type="email" name="email_address" id="email_address" placeholder="Email-Adresse...">
+
+ <fieldset required>
   <legend>Geschlecht:</legend>
-  <label for="male">
-    <input type="radio" id="male" name="gender" value="male">
-    männlich
-  </label><br>
-  <label for="female">
-    <input type="radio" id="female" name="gender" value="female">
-    weiblich
-  </label><br>
-  <label for="diverse">
-    <input type="radio" id="diverse" name="gender" value="diverse">
-    divers
-  </label>
+  <label> <input type="radio" name="geschlecht" id="radio_maenlich" required value="maenlich"> männlich </label>
+  <label> <input type="radio" name="geschlecht" id="radio_weiblich" required value="weiblich"> weiblich </label>
+  <label> <input type="radio" name="geschlecht" id="radio_divers" required value="divers"> divers </label>
 </fieldset>
 
-<div class="birthday_row">
-  <label for="birthday">Geboren am</label>
-  <input type="date" id="birthday" name="birthday" placeholder="TT.MM.JJJJ" required>
-</div>
-
-<div class="birth_place_row">
-  <label for="birth_place">Geburtsort</label>
-  <input type="text" id="birth_place" name="birth_place" placeholder="Geburtsort.." required>
-</div>
-
-
-<div class="nationality_row">
-  <label for="nationality">Staatsangehörigkeit</label>
-  <input type="text" id="nationality" name="nationality" placeholder="Staatsangehörigkeit.." required>
-</div>  
+  <label for="pickup_time">Geboren am:</label>
+  <input type="date" name="pickup_time" id="pickup_time" placeholder="" required>
     
-  <div class="phone_row">
-  <label for="phone">Handynummer</label>
-  <input type="tel" id="phone" name="phone" placeholder="Handynummer.." required>
-</div>
+    <label for="nationality">Staatsangehörigkeit</label>
+    <input type="text" id="nationality"  placeholder="Staatsangehörigkeit..">
+    
+    <label for="phone">Handy Nummer</label>
+    <input type="text" id="phone"  placeholder="Handynummer..">
+    
+    <label for="telephone">Telefon</label>
+    <input type="text" id="telephone"  placeholder="Telefon..">
+    
+    <div class="permission_container">
+      
+      <label for="permission">Zustimmung zur Verwendung</label>
+      <label>Ja, die Rahel-Hirsch-Schule darf Fotos von mir verwenden</label>
+      <label>Ich erteile hiermit der Rahel-Hirsch-Schule die jederzeit widerrufliche Erlaubnis, für schulische Zwecke (z.B. auf der Webseite der Schule, in Schulbroschüren, etc.) Fotos oder Abbildungen, auf denen ich zu erkennen bin, zu verwenden</label>
+      <input type="checkbox" id="permission" name="permission" checked>
+      </div>
 
-<div class="telephone_row">
-  <label for="telephone">Telefon</label>
-  <input type="tel" id="telephone" name="telephone" placeholder="Telefonnummer.." required>
+    <a href="">Weiter</a>
+   
+  </form>
+  </div>
 </div>
+</main>
 
-<div class="email_row">
-  <label for="email">E-Mail</label>
-  <input type="email" id="email" name="email" placeholder="E-Mail-Adresse.." required>
-</div>
-
-<div class="checkbox_row">
-  <input type="checkbox" id="photo_permission" name="photo_permission" checked>
-  <label for="photo_permission">Zustimmung zur Verwendung</label>
-  <p>Ja, die Rahel-Hirsch-Schule darf Fotos von mir verwenden</p>
-  <p>Ich erteile hiermit der Rahel-Hirsch-Schule die jederzeit widerrufliche Erlaubnis, für schulische Zwecke (z.B. auf der Webseite der Schule, in Schulbroschüren, etc.) Fotos oder Abbildungen, auf denen ich zu erkennen bin, zu verwenden</p>
-</div>
-
-<!-- Weiter button -->
-<div class="button_row">
-  <button type="submit">Weiter</button>
-</div>
 <style>
-* {
-    box-sizing: border-box;
-}
 
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
+.personal_data_body {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 }
-
-label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-}
-
-input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-.container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-
-
-.personal_data {
-    display: flex;
-    flex-direction: column;
-}
-.personal_data_container {
-border: ;
-   background-color: #ffffff;
-   padding: 40px;
-   width: 50%;
-   height: 50%;
-   margin-left: auto;
-   margin-right: auto;
-}
-
 .header_personal_data {
-background-color: #b46445;
+background-color: #ef9b49;
+height: 2%;
 }
+  .personal_data_form > * {
+   font-size: 1.4em; 
+  }
+  .personal_data_form {
+    display: grid;
+    grid-template-columns: [labels] 30% [controls] 70%;
+    grid-auto-flow: row;
+    grid-gap: .8em .5em;
+    background: rgba(243,234,234,0.43);
+    padding: 1.2em;
+    width: 97%;
+  }
+  .personal_data_form > label,
+  .personal_data_form > fieldset  {
+    grid-column: labels;
+  }
+  .personal_data_form > input, 
+  .personal_data_form > select,
+  .personal_data_form > textarea,
+  .personal_data_form > button {
+    grid-column: controls;
+    padding: .4em;
+    border: 0;
+  }
+  .personal_data_form > fieldset {
+    grid-column: span 2;
+  }  
+  .personal_data_form > a {
+    background-color: rgb(206,107,45);
+    color: white;
+    border: 5px solid #f8f6f6;;
+    border-radius: 5px;
+    font-size:  1.3rem;
+    font-weight: bold;
+    padding: 1.5rem 1.2rem 1.5rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  .personal_data_form > textarea {
+    min-height: 3em;
+    }
+    
+    .personal_data_form > .permission_container{
+    margin-top: 2rem;
+         grid-column-start: 1;
+      grid-column-end: 3;
+    }
 
-</style>';
+</style>
+
+';
 
     }
 }
