@@ -1,5 +1,5 @@
-CREATE TABLE IF NOT EXISTS Students (
-    id_students INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS students (
+    p_student_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(255),
     last_name VARCHAR (255),
     birth_date DATETIME,

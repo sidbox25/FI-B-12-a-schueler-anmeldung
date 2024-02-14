@@ -1,4 +1,0 @@
-CREATE IF NOT EXISTS TABLE Contract (
-    id_contract INT PRIMARY KEY AUTO_INCREMENT,
-    file BLOB,
-);
