@@ -5,6 +5,6 @@ class StudentAgeView
 {
     public function createStudentAgeInputForm(array $data)
     {
-        echo file_get_contents("src\StudentAge\View\StudentAgeView.html");
+        echo file_get_contents("src/StudentAge/View/StudentAgeView.html");
     }
 }
