@@ -15,67 +15,70 @@ OSZIMT Schule
   <form class="personal_data">
   <div class="fname_row">
     <label for="fname">Vorname</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name...">
+    <input type="text" id="fname" name="firstname" placeholder="Ihr Vorname">
    </div>
    <div class="lname_row">
     <label for="lname">Familienname</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name...">
+    <input type="text" id="lname" name="lastname" placeholder="Ihr Nachname">
     </div>
 
-  <p>Geschlecht:</p>
-<label for="man">männlich</label><br>
- <input type="radio" id="man">
-<label for="woman">weiblich</label><br>
-<input type="radio" id="woman">
- <label for="divers">divers</label>
-<input type="radio" id="divers" name="fav_language" value="JavaScript">
+<fieldset>
+  <legend>Geschlecht:</legend>
+  <label for="male">
+    <input type="radio" id="male" name="gender" value="male">
+    männlich
+  </label><br>
+  <label for="female">
+    <input type="radio" id="female" name="gender" value="female">
+    weiblich
+  </label><br>
+  <label for="diverse">
+    <input type="radio" id="diverse" name="gender" value="diverse">
+    divers
+  </label>
+</fieldset>
 
-   <div class="birthday_row">
-    <label for="birthday">Geboren am</label>
-    <input type="text" id="birthday"  placeholder="Your birthday..">
-    </div>
-    
-       <div class="birth_place_row">
-    <label for="birth_place">Geburtsort</label>
-    <input type="text" id="birth_place" placeholder="Yourbirth_place..">
-    </div>
-    
-       <div class="nationality_row">
-    <label for="nationality">Staatsangehörigkeit</label>
-    <input type="text" id="nationality"  placeholder="Your nationality..">
-    </div>       
-    
-    <div class="phone_row">
-    <label for="phone">Handy Nummer</label>
-    <input type="text" id="phone"  placeholder="Your phone..">
-    </div>    
-    
-    <div class="telephone_row">
-    <label for="telephone">Telefon</label>
-    <input type="text" id="telephone"  placeholder="Your phone..">
-    </div>    
-    
-    <div class="email_row">
-    <label for="email">Telefon</label>
-    <input type="text" id="email"  placeholder="Your email..">
-    </div>
-    <div class="checkbox_row">
-    <span class="checkmark">Zustimmung zur Verwendung</span>
-    <input type="checkbox" checked="checked">
-    <p>Ja, die Rahel-Hirsch-Schule darf Fotos von mir verwenden</p>
-    <p>Ich erteile hiermit der Rahel-Hirsch-Schule die jederzeit widerrufliche Erlaubnis, für shculische Zwecke (z.B auf der Webseite der Schule, in Schulbroschüren, etc.) Fotos oder Abbildungen, auf denen ich zu erkennen bin, zu verwenden</p>
-    </div>
-
-    <!-- Upload file -->
-    <h2>Upload a file</h2>
-    <form method="post" enctype="multipart/form-data">
-        <input type="file"  accept=".pdf,.jpg,.png"/>
-        <br /><br />
-        <button type="submit" name="submit">Upload</button>
-    </form>
+<div class="birthday_row">
+  <label for="birthday">Geboren am</label>
+  <input type="date" id="birthday" name="birthday" placeholder="TT.MM.JJJJ" required>
 </div>
 
-  </form>
+<div class="birth_place_row">
+  <label for="birth_place">Geburtsort</label>
+  <input type="text" id="birth_place" name="birth_place" placeholder="Geburtsort.." required>
+</div>
+
+
+<div class="nationality_row">
+  <label for="nationality">Staatsangehörigkeit</label>
+  <input type="text" id="nationality" name="nationality" placeholder="Staatsangehörigkeit.." required>
+</div>  
+    
+  <div class="phone_row">
+  <label for="phone">Handynummer</label>
+  <input type="tel" id="phone" name="phone" placeholder="Handynummer.." required>
+</div>
+
+<div class="telephone_row">
+  <label for="telephone">Telefon</label>
+  <input type="tel" id="telephone" name="telephone" placeholder="Telefonnummer.." required>
+</div>
+
+<div class="email_row">
+  <label for="email">E-Mail</label>
+  <input type="email" id="email" name="email" placeholder="E-Mail-Adresse.." required>
+</div>
+
+<div class="checkbox_row">
+  <input type="checkbox" id="photo_permission" name="photo_permission" checked>
+  <label for="photo_permission">Zustimmung zur Verwendung</label>
+  <p>Ja, die Rahel-Hirsch-Schule darf Fotos von mir verwenden</p>
+  <p>Ich erteile hiermit der Rahel-Hirsch-Schule die jederzeit widerrufliche Erlaubnis, für schulische Zwecke (z.B. auf der Webseite der Schule, in Schulbroschüren, etc.) Fotos oder Abbildungen, auf denen ich zu erkennen bin, zu verwenden</p>
+</div>
+
+<!-- Weiter button -->
+<div class="button_row">
+  <button type="submit">Weiter</button>
 </div>
 <style>
 * {
