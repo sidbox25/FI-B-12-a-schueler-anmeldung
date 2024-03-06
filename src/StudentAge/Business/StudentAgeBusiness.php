@@ -1,8 +1,7 @@
 <?php
 
-namespace src\StudentPersonalData\Business;
-
-class StudentPersonalDataBusiness
+namespace src\StudentAge\Business;
+class StudentAgeBusiness
 {
 
     public function __construct()
@@ -24,17 +23,5 @@ class StudentPersonalDataBusiness
         );
 
         return $daten;
-    }
-
-    public function saveUploadedFile()
-    {
-        if (isset($_FILES["file"])) {
-        $updloadedFile = $_FILES["file"];
-        if (isset($_POST["submit"])) {
-            // save file when database is done !
-        }
-        }
-        
-        return "";
     }
 }

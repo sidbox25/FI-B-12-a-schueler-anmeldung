@@ -1,1 +1,1 @@
-CREATE IF NOT EXISTS DATABASE StudentRegistration;
+CREATE DATABASE IF NOT EXISTS StudentRegistration;

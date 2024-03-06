@@ -22,10 +22,12 @@
     use src\GeschafftTab\Controller\GeschafftTabController;
     use src\HomePage\HomePageController\HomePageController;
     use src\StudentPersonalData\Controller\StudentPersonalDataController;
+    use src\StudentRegistration\Controller\StudentRegistrationApprenticeController;
     use src\StudentRegistration\Controller\StudentRegistrationController;
     use src\StudentRegistration\Controller\StudentSchoolVisitsController;
     //use src\UploadPdf\Controller\StudentRegistrationApprenticeshipController;
     use src\StudentResidence\Controller\StudentResidenceController;
+    use src\StudentAge\Controller\StudentAgeController;
     use src\Core\Connector;
 
     if ($_SERVER['REQUEST_URI'] === '/') {
@@ -50,8 +52,8 @@
         $studentSchoolVisitsController->showStudentSchoolVisitsAction();
     }
     if($_SERVER['REQUEST_URI'] === '/schultage') {
-        $studentSchoolVisitsController = new StudentSchoolVisitsController();
-        $studentSchoolVisitsController->saveSchoolVisitsDataAction();
+        $studentSchoolVisitsController = new StudentRegistrationApprenticeController();
+        $studentSchoolVisitsController->studentRegistrationApprenticeViewAction();
     }
     if($_SERVER['REQUEST_URI'] === '/persoenliche_daten') {
         $studentPersonalDataController = new StudentPersonalDataController();
@@ -66,6 +68,11 @@
     if($_SERVER['REQUEST_URI'] === '/wohnort') {
         $studentResidenceController = new StudentResidenceController();
         $studentResidenceController->studentResidenceViewAction();
+    }
+
+    if($_SERVER['REQUEST_URI'] === '/alter') {
+        $studentAgeController = new StudentAgeController();
+        $studentAgeController->studentAgeViewAction();
     }
 
     // if ($_SERVER['REQUEST_URI'] === '/weiter') {

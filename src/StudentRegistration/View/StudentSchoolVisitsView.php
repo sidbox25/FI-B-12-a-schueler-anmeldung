@@ -57,13 +57,11 @@ class StudentSchoolVisitsView
             <input type="checkbox" name="neu_an_der_schule" value="war_schueler"> Ich war bereits Schüler*in der Rahel-Hirsch-Schule
         </label>
 
-        <label>
-            <input type="checkbox" name="neu_an_der_schule" value="aktuell_schueler"> Ich bin aktuell Schüler*in der Rahel-Hirsch-Schule
-        </label>
+    <label>
+        <input type="checkbox" name="neu_an_der_schule" value="aktuell_schueler"> Ich bin aktuell Schüler*in der Rahel-Hirsch-Schule
+    </label>
+    <a class="wieter-schoolvisit-btn" href="/schultage">Weiter</a>
     </div>
-    </div>
-
-    <button  type="submit"><a href="/schultage">Weiter</a</button>
 </form>
 </body>
 
