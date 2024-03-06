@@ -20,7 +20,7 @@ class StudentRegistrationApprenticeController
     public function view($uploadDirectory)
     {
         $StudentRegistrationApprenticeshipView = new StudentRegistrationApprenticeshipView();
-        return $StudentRegistrationApprenticeshipView->renderFileUploadForm();
+        $StudentRegistrationApprenticeshipView->renderFileUploadForm();
         
     }
     // public function __construct()
@@ -66,4 +66,4 @@ class StudentRegistrationApprenticeController
     }
 
 }
-?>
+

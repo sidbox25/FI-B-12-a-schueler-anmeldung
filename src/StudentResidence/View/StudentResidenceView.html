@@ -1,0 +1,74 @@
+<div class="container">
+
+    <form class="form" id="frm_page">
+
+        <h1>Wohnort</h1>
+
+        <div class="field">
+            <label for="residence">Wohnort</label>
+            <input id="residence" type="text" required="true" placeholder="Adresse..">
+        </div>
+
+        <div class="field">
+            <label for="street">Postleitzahl</label>
+            <input id="street" type="text" required="true" placeholder="Postleitzahl der Adresse..">
+        </div>
+
+        <div class="field">
+            <label for="house_num">Hausnummer</label>
+            <input id="house_num" type="number" required="true" placeholder="Hausnummer der Adresse..">
+        </div>
+
+        <div class="field">
+            <label for="notfall">Notfallkontakt</label>
+            <input id="notfall" type="text" required="true" placeholder="Notfallkontakt..">
+        </div>
+
+        <div class="field">
+            <label for="notfall_tele">Telefon von Notfallkontakt</label>
+            <input id="notfall_tele" type="tel" required="true" placeholder="Telefonnummer des Notfallkontaktes..">
+        </div>
+
+        <div class="field">
+            <button type="submit">Weiter</button>
+        </div>
+
+    </form>
+
+</div>
+
+<!-- TODO Separate css and html -->
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        background: white;
+        padding: 40px;
+    }
+
+    .field {
+        width: 100%;
+        height: 75px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    input[type=text],
+    input[type=tel],
+    input[type=number] {
+        height: 30px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+</style>
