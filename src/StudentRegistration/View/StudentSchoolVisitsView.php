@@ -79,7 +79,12 @@ class StudentSchoolVisitsView
             </div>
         </div>
     </div>
-    <a class="weiter-schoolvisit-btn" href="/schultage">Weiter</a>
+    <a class="prev-page-btn" href="/">
+        <img src="/src/Core/assets/images/prev-arrow.png" class="prev-page" alt="Vorherige Seite">
+    </a>
+    <a class="weiter-schoolvisit-btn" href="/schultage">
+        <img src="/src/Core/assets/images/next-arrow.png" class="next-page" alt="Nächste Seite">
+    </a>
 </form>
 </body>
 
@@ -121,6 +126,17 @@ class StudentSchoolVisitsView
     .checkbox-gap {
         padding: 5px;
         font-size: 14px;
+    }
+    
+    .next-page {
+      width: 5%;
+      height: auto;
+      float:right;
+      margin-right:10%;
+    }
+    .prev-page {
+      width: 5%;
+      height: auto;
     }
 
 </style>
