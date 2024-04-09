@@ -71,12 +71,13 @@
                     placeholder="Telefonnummer der Erziehungsberechtigter..">
             </div>
 
-            <div>
-                <button type="submit">Weiter</button>
-            </div>
-
+            <a class="prev-page-btn" href="/wohnort">
+                <img src="/src/Core/assets/images/prev-arrow.png" class="prev-page" alt="Vorherige Seite">
+            </a>
+            <a class="weiter-schoolvisit-btn" href="/">
+            <img src="/src/Core/assets/images/next-arrow.png" class="next-page" alt="Nächste Seite">
+            </a>
         </div>
-
     </form>
 
 </div>
@@ -122,5 +123,16 @@
         height: 30px;
         border: 1px solid #ccc;
         border-radius: 4px;
+    }
+
+    .next-page {
+      width: 5%;
+      height: auto;
+      float:right;
+      margin-right:10%;
+    }
+    .prev-page {
+      width: 5%;
+      height: auto;
     }
 </style>

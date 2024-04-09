@@ -29,9 +29,12 @@
             <input id="notfall_tele" type="tel" required="true" placeholder="Telefonnummer des Notfallkontaktes..">
         </div>
 
-        <div class="field">
-            <button type="submit">Weiter</button>
-        </div>
+        <a class="prev-page-btn" href="/persoenliche_daten">
+            <img src="/src/Core/assets/images/prev-arrow.png" class="prev-page" alt="Vorherige Seite">
+        </a>
+        <a class="weiter-schoolvisit-btn" href="/alter">
+            <img src="/src/Core/assets/images/next-arrow.png" class="next-page" alt="Nächste Seite">
+        </a>
 
     </form>
 
@@ -70,5 +73,16 @@
         height: 30px;
         border: 1px solid #ccc;
         border-radius: 4px;
+    }
+
+    .next-page {
+      width: 5%;
+      height: auto;
+      float:right;
+      margin-right:10%;
+    }
+    .prev-page {
+      width: 5%;
+      height: auto;
     }
 </style>

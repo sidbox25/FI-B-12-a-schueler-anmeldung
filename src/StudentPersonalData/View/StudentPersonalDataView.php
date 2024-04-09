@@ -49,7 +49,12 @@ class StudentPersonalDataView
       <input type="checkbox" id="permission" name="permission" checked>
       </div>
 
-    <a href="">Weiter</a>
+    <a class="prev-page-btn" href="/">
+    <img src="/src/Core/assets/images/prev-arrow.png" class="prev-page" alt="Vorherige Seite">
+    </a>
+    <a class="weiter-schoolvisit-btn" href="/wohnort">
+        <img src="/src/Core/assets/images/next-arrow.png" class="next-page" alt="Nächste Seite">
+    </a>
    
   </form>
   </div>
@@ -118,6 +123,16 @@ height: 2%;
       grid-column-end: 3;
     }
 
+    .next-page {
+      width: 5%;
+      height: auto;
+      float:right;
+      margin-right:10%;
+    }
+    .prev-page {
+      width: 5%;
+      height: auto;
+    
 </style>
 
 ';

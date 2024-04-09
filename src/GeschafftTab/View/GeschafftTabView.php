@@ -19,6 +19,7 @@ class GeschafftTabView
                 <form action="formular.php" method="post">
                     <input type="submit" value="Senden">
                 </form>
+
             </main>
         ';
     }
