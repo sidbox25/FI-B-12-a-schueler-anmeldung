@@ -33,14 +33,14 @@ class StudentSchoolVisitsView
     <div class = "container">
         <label class = "containerWhite", for="last_school">Zuletzt besuchte Schule:</label>
         <div>
-            <input type="text" id="last_school" name="last_school" title="Zuletzt besuchte Schule">
+            <input id="textfield" type="text" id="last_school" name="last_school" title="Zuletzt besuchte Schule">
         </div>
     </div>
 
     <div class = "container">
         <label class = "containerWhite", for="completion_year">Abschluss-/Abgangsjahr:</label>
         <div>
-            <input type="text" id="completion_year" name="completion_year" title="Abschluss-/Abgangsjahr">
+            <input id="textfield" type="text" id="completion_year" name="completion_year" title="Abschluss-/Abgangsjahr">
         </div>
     </div>
 
@@ -93,6 +93,12 @@ class StudentSchoolVisitsView
         display: grid;
         width: 200px;
         height: 25px;
+    }
+
+    #textfield{
+        display: grid;
+        width: 192px;
+        height: 18px;
     }
 
     .container {
