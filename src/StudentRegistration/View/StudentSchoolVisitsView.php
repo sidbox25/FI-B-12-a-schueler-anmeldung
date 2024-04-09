@@ -19,7 +19,7 @@ class StudentSchoolVisitsView
             <p style="margin-top: 5px; font-style: italic; font-size: 9pt; color: grey">Wählen Sie hier nur Ihren zuletzt erreichten Schulabschluss aus.</p>
         </div>
         <div>
-        <select id="schulabschluss" name="schulabschluss">
+        <select id="dropdown" name="schulabschluss">
             <option value="berufsbildungsreife">Berufsbildungsreife</option>
             <option value="erweiterte_berufsbildungsreife">Erweiterte Berufsbildungsreife</option>
             <option value="mittlerer_schulabschluss">Mittlerer Schulabschluss</option>
@@ -47,7 +47,7 @@ class StudentSchoolVisitsView
     <div class = "container">
         <label class = "containerWhite", for="abgeschlossener_lehrgang">Abgeschlossener Lehrgang:</label>
         <div>
-            <select id="abgeschlossener_lehrgang" name="abgeschlossener_lehrgang">
+            <select id="dropdown" name="abgeschlossener_lehrgang">
                 <option value="IBA">IBA</option>
                 <option value="BQL">BQL</option>
                 <option value="BV">BV</option>
@@ -62,16 +62,21 @@ class StudentSchoolVisitsView
             <p>Neu an der Rahel-Hirsch-Schule?</p>
         </div>
         <div>
-            <label>
-                <input type="checkbox" name="neu_an_der_schule" value="ja"> Ja, ich bin neu an der Rahel-Hirsch-Schule
-            </label>
-
-            <label>
-                <input type="checkbox" name="neu_an_der_schule" value="war_schueler"> Ich war bereits Schüler*in der Rahel-Hirsch-Schule
-            </label>
-            <label>
-                <input type="checkbox" name="neu_an_der_schule" value="aktuell_schueler"> Ich bin aktuell Schüler*in der Rahel-Hirsch-Schule
-            </label>
+            <div class = "checkbox-gap">
+                <label>
+                    <input type="radio" name="neu_an_der_schule" value="ja"> Ja, ich bin neu an der Rahel-Hirsch-Schule
+                </label>
+            </div>
+            <div class = "checkbox-gap">
+                <label>
+                    <input type="radio" name="neu_an_der_schule" value="war_schueler"> Ich war bereits Schüler*in der Rahel-Hirsch-Schule
+                </label>
+            </div>
+            <div class = "checkbox-gap">
+                <label>
+                    <input type="radio" name="neu_an_der_schule" value="aktuell_schueler"> Ich bin aktuell Schüler*in der Rahel-Hirsch-Schule
+                </label>
+            </div>
         </div>
     </div>
     <a class="weiter-schoolvisit-btn" href="/schultage">Weiter</a>
@@ -84,9 +89,15 @@ class StudentSchoolVisitsView
         color: white;
     }
 
+    #dropdown{
+        display: grid;
+        width: 200px;
+        height: 25px;
+    }
+
     .container {
         display: grid;
-        grid-template-columns: [left] 10fr [middle1] 15fr [middle2] 15fr [right];
+        grid-template-columns: [left] 5fr [middle2] 15fr [right];
         grid-template-rows: auto;
         grid-column-start: 1;
         grid-column-end: 2;
@@ -99,6 +110,11 @@ class StudentSchoolVisitsView
 
     .containerWhite {
         background-color: white;
+    }
+
+    .checkbox-gap {
+        padding: 5px;
+        font-size: 14px;
     }
 
 </style>
