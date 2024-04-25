@@ -9,7 +9,7 @@ class ConnectionConfig
      */
     public static function getDatabaseUser(): string
     {
-        return "root";
+        return "schueler_anmeldung_user";
     }
 
     /**
@@ -17,7 +17,7 @@ class ConnectionConfig
      */
     public static function getDatabasePassword(): string
     {
-        return "";
+        return "Password123$";
     }
 
     /**
@@ -33,7 +33,7 @@ class ConnectionConfig
      */
     public static function getDatabaseName(): string
     {
-        return "test";
+        return "StudentRegistration";
     }
 
     /**
