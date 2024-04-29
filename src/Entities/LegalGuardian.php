@@ -5,13 +5,13 @@ class LegalGuardian extends BaseEntity
     protected $conn;
     protected $table = 'legal_guardians';
 
-    public $p_parent_id;
-    public $f_student_id;
-    public $f_gender_id;
-    public $f_address_id;
-    public $lastname;
-    public $firstname;
-    public $telefon_number;
+    private $p_parent_id;
+    private $f_student_id;
+    private $f_gender_id;
+    private $f_address_id;
+    private $lastname;
+    private $firstname;
+    private $telefon_number;
 
     public function __construct($db)
     {
@@ -52,4 +52,117 @@ class LegalGuardian extends BaseEntity
 
         return false;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPParentId()
+    {
+        return $this->p_parent_id;
+    }
+
+    /**
+     * @param mixed $p_parent_id
+     */
+    public function setPParentId($p_parent_id)
+    {
+        $this->p_parent_id = $p_parent_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFStudentId()
+    {
+        return $this->f_student_id;
+    }
+
+    /**
+     * @param mixed $f_student_id
+     */
+    public function setFStudentId($f_student_id)
+    {
+        $this->f_student_id = $f_student_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFGenderId()
+    {
+        return $this->f_gender_id;
+    }
+
+    /**
+     * @param mixed $f_gender_id
+     */
+    public function setFGenderId($f_gender_id)
+    {
+        $this->f_gender_id = $f_gender_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFAddressId()
+    {
+        return $this->f_address_id;
+    }
+
+    /**
+     * @param mixed $f_address_id
+     */
+    public function setFAddressId($f_address_id)
+    {
+        $this->f_address_id = $f_address_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param mixed $lastname
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param mixed $firstname
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTelefonNumber()
+    {
+        return $this->telefon_number;
+    }
+
+    /**
+     * @param mixed $telefon_number
+     */
+    public function setTelefonNumber($telefon_number)
+    {
+        $this->telefon_number = $telefon_number;
+    }
+
 }

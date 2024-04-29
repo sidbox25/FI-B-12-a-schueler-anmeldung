@@ -5,11 +5,11 @@ class CompletedCourse extends BaseEntity {
     protected $conn;
     protected $table = 'completed_courses';
 
-    public $p_course_id;
-    public $course_name;
+    private $p_course_id;
+    private $course_name;
 
     public function __construct($db) {
-        $this->conn = $db;
+        parent::__construct($db);
     }
 
     public function create() {
@@ -29,5 +29,37 @@ class CompletedCourse extends BaseEntity {
         printf("Error: %s.\n", $stmt->error);
 
         return false;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPCourseId()
+    {
+        return $this->p_course_id;
+    }
+
+    /**
+     * @param mixed $p_course_id
+     */
+    public function setPCourseId($p_course_id)
+    {
+        $this->p_course_id = $p_course_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCourseName()
+    {
+        return $this->course_name;
+    }
+
+    /**
+     * @param mixed $course_name
+     */
+    public function setCourseName($course_name)
+    {
+        $this->course_name = $course_name;
     }
 }

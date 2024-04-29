@@ -5,18 +5,18 @@ class SchoolVisit extends BaseEntity
     protected $conn;
     protected $table = 'school_visit';
 
-    public $pf_students_id;
-    public $last_visited_school;
-    public $last_finished_apprenticeship;
-    public $graduation_year;
-    public $f_option_id;
-    public $f_graduation_id;
-    public $f_course_id;
-    public $fk_school_day_options_id;
+    private $pf_students_id;
+    private $last_visited_school;
+    private $last_finished_apprenticeship;
+    private $graduation_year;
+    private $f_option_id;
+    private $f_graduation_id;
+    private $f_course_id;
+    private $fk_school_day_options_id;
 
     public function __construct($db)
     {
-        parent::__conctruct($db);
+        parent::__construct($db);
     }
 
     public function create()
@@ -55,5 +55,133 @@ class SchoolVisit extends BaseEntity
         printf("Error: %s.\n", $stmt->error);
 
         return false;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPfStudentsId()
+    {
+        return $this->pf_students_id;
+    }
+
+    /**
+     * @param mixed $pf_students_id
+     */
+    public function setPfStudentsId($pf_students_id)
+    {
+        $this->pf_students_id = $pf_students_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastVisitedSchool()
+    {
+        return $this->last_visited_school;
+    }
+
+    /**
+     * @param mixed $last_visited_school
+     */
+    public function setLastVisitedSchool($last_visited_school)
+    {
+        $this->last_visited_school = $last_visited_school;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastFinishedApprenticeship()
+    {
+        return $this->last_finished_apprenticeship;
+    }
+
+    /**
+     * @param mixed $last_finished_apprenticeship
+     */
+    public function setLastFinishedApprenticeship($last_finished_apprenticeship)
+    {
+        $this->last_finished_apprenticeship = $last_finished_apprenticeship;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGraduationYear()
+    {
+        return $this->graduation_year;
+    }
+
+    /**
+     * @param mixed $graduation_year
+     */
+    public function setGraduationYear($graduation_year)
+    {
+        $this->graduation_year = $graduation_year;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFOptionId()
+    {
+        return $this->f_option_id;
+    }
+
+    /**
+     * @param mixed $f_option_id
+     */
+    public function setFOptionId($f_option_id)
+    {
+        $this->f_option_id = $f_option_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFGraduationId()
+    {
+        return $this->f_graduation_id;
+    }
+
+    /**
+     * @param mixed $f_graduation_id
+     */
+    public function setFGraduationId($f_graduation_id)
+    {
+        $this->f_graduation_id = $f_graduation_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFCourseId()
+    {
+        return $this->f_course_id;
+    }
+
+    /**
+     * @param mixed $f_course_id
+     */
+    public function setFCourseId($f_course_id)
+    {
+        $this->f_course_id = $f_course_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFkSchoolDayOptionsId()
+    {
+        return $this->fk_school_day_options_id;
+    }
+
+    /**
+     * @param mixed $fk_school_day_options_id
+     */
+    public function setFkSchoolDayOptionsId($fk_school_day_options_id)
+    {
+        $this->fk_school_day_options_id = $fk_school_day_options_id;
     }
 }

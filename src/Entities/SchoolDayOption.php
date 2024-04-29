@@ -5,14 +5,14 @@ class SchoolDayOption extends BaseEntity
     protected $conn;
     protected $table = 'school_day_options';
 
-    public $p_school_day_options_id;
-    public $school_day_option;
-    public $school_year;
-    public $school_semester;
+    private $p_school_day_options_id;
+    private $school_day_option;
+    private $school_year;
+    private $school_semester;
 
     public function __construct($db)
     {
-        $this->conn = $db;
+        parent::__construct($db);
     }
 
     public function create()
@@ -40,4 +40,69 @@ class SchoolDayOption extends BaseEntity
 
         return false;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPSchoolDayOptionsId()
+    {
+        return $this->p_school_day_options_id;
+    }
+
+    /**
+     * @param mixed $p_school_day_options_id
+     */
+    public function setPSchoolDayOptionsId($p_school_day_options_id)
+    {
+        $this->p_school_day_options_id = $p_school_day_options_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSchoolDayOption()
+    {
+        return $this->school_day_option;
+    }
+
+    /**
+     * @param mixed $school_day_option
+     */
+    public function setSchoolDayOption($school_day_option)
+    {
+        $this->school_day_option = $school_day_option;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSchoolYear()
+    {
+        return $this->school_year;
+    }
+
+    /**
+     * @param mixed $school_year
+     */
+    public function setSchoolYear($school_year)
+    {
+        $this->school_year = $school_year;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSchoolSemester()
+    {
+        return $this->school_semester;
+    }
+
+    /**
+     * @param mixed $school_semester
+     */
+    public function setSchoolSemester($school_semester)
+    {
+        $this->school_semester = $school_semester;
+    }
+
 }

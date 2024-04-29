@@ -5,12 +5,11 @@ class OccupationName extends BaseEntity
     protected $conn;
     protected $table = 'occupation_names';
 
-    public $p_occupation_name_id;
-    public $occupation_name;
+    private $p_occupation_name_id;
+    private $occupation_name;
 
-    public function __construct($db)
-    {
-        $this->conn = $db;
+    public function __construct($db) {
+        parent::__construct($db);
     }
 
     public function create()
@@ -31,5 +30,37 @@ class OccupationName extends BaseEntity
         printf("Error: %s.\n", $stmt->error);
 
         return false;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPOccupationNameId()
+    {
+        return $this->p_occupation_name_id;
+    }
+
+    /**
+     * @param mixed $p_occupation_name_id
+     */
+    public function setPOccupationNameId($p_occupation_name_id)
+    {
+        $this->p_occupation_name_id = $p_occupation_name_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOccupationName()
+    {
+        return $this->occupation_name;
+    }
+
+    /**
+     * @param mixed $occupation_name
+     */
+    public function setOccupationName($occupation_name)
+    {
+        $this->occupation_name = $occupation_name;
     }
 }

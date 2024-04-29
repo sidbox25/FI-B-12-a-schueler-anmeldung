@@ -4,11 +4,11 @@ class ChosenOption extends BaseEntity {
     protected $conn;
     protected $table = 'chosen_options';
 
-    public $p_chosen_option_id;
-    public $chosen_option;
+    private $p_chosen_option_id;
+    private $chosen_option;
 
     public function __construct($db) {
-        $this->conn = $db;
+        parent::__construct($db);
     }
 
     public function create() {
@@ -29,4 +29,37 @@ class ChosenOption extends BaseEntity {
 
         return false;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPChosenOptionId()
+    {
+        return $this->p_chosen_option_id;
+    }
+
+    /**
+     * @param mixed $p_chosen_option_id
+     */
+    public function setPChosenOptionId($p_chosen_option_id)
+    {
+        $this->p_chosen_option_id = $p_chosen_option_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getChosenOption()
+    {
+        return $this->chosen_option;
+    }
+
+    /**
+     * @param mixed $chosen_option
+     */
+    public function setChosenOption($chosen_option)
+    {
+        $this->chosen_option = $chosen_option;
+    }
+
 }

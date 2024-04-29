@@ -4,11 +4,11 @@ class Contract extends BaseEntity {
     protected $conn;
     protected $table = 'contracts';
 
-    public $p_id_contract;
-    public $file;
+    private $p_id_contract;
+    private $file;
 
     public function __construct($db) {
-        $this->conn = $db;
+        parent::__construct($db);
     }
 
     public function create() {
@@ -28,4 +28,38 @@ class Contract extends BaseEntity {
 
         return false;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPIdContract()
+    {
+        return $this->p_id_contract;
+    }
+
+    /**
+     * @param mixed $p_id_contract
+     */
+    public function setPIdContract($p_id_contract)
+    {
+        $this->p_id_contract = $p_id_contract;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param mixed $file
+     */
+    public function setFile($file)
+    {
+        $this->file = $file;
+    }
+
+
 }

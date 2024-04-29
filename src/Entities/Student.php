@@ -5,26 +5,26 @@ class Student extends BaseEntity
     protected $conn;
     protected $table = 'students';
 
-    public $p_student_id;
-    public $first_name;
-    public $last_name;
-    public $birth_date;
-    public $city_of_birth;
-    public $country_of_birth;
-    public $nationality;
-    public $parents_language_of_birth;
-    public $email;
-    public $mobile_numbers;
-    public $phone;
-    public $consent_photos;
-    public $lives_with;
-    public $emergency_contact;
-    public $emergency_contact_phone;
-    public $fk_apprenticeship_id;
+    private $p_student_id;
+    private $first_name;
+    private $last_name;
+    private $birth_date;
+    private $city_of_birth;
+    private $country_of_birth;
+    private $nationality;
+    private $parents_language_of_birth;
+    private $email;
+    private $mobile_numbers;
+    private $phone;
+    private $consent_photos;
+    private $lives_with;
+    private $emergency_contact;
+    private $emergency_contact_phone;
+    private $fk_apprenticeship_id;
 
     public function __construct($db)
     {
-        $this->conn = $db;
+        parent::__construct($db);
     }
 
     public function create()
@@ -89,4 +89,259 @@ class Student extends BaseEntity
         return false;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPStudentId()
+    {
+        return $this->p_student_id;
+    }
+
+    /**
+     * @param mixed $p_student_id
+     */
+    public function setPStudentId($p_student_id)
+    {
+        $this->p_student_id = $p_student_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFirstName()
+    {
+        return $this->first_name;
+    }
+
+    /**
+     * @param mixed $first_name
+     */
+    public function setFirstName($first_name)
+    {
+        $this->first_name = $first_name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastName()
+    {
+        return $this->last_name;
+    }
+
+    /**
+     * @param mixed $last_name
+     */
+    public function setLastName($last_name)
+    {
+        $this->last_name = $last_name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBirthDate()
+    {
+        return $this->birth_date;
+    }
+
+    /**
+     * @param mixed $birth_date
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->birth_date = $birth_date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCityOfBirth()
+    {
+        return $this->city_of_birth;
+    }
+
+    /**
+     * @param mixed $city_of_birth
+     */
+    public function setCityOfBirth($city_of_birth)
+    {
+        $this->city_of_birth = $city_of_birth;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCountryOfBirth()
+    {
+        return $this->country_of_birth;
+    }
+
+    /**
+     * @param mixed $country_of_birth
+     */
+    public function setCountryOfBirth($country_of_birth)
+    {
+        $this->country_of_birth = $country_of_birth;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNationality()
+    {
+        return $this->nationality;
+    }
+
+    /**
+     * @param mixed $nationality
+     */
+    public function setNationality($nationality)
+    {
+        $this->nationality = $nationality;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getParentsLanguageOfBirth()
+    {
+        return $this->parents_language_of_birth;
+    }
+
+    /**
+     * @param mixed $parents_language_of_birth
+     */
+    public function setParentsLanguageOfBirth($parents_language_of_birth)
+    {
+        $this->parents_language_of_birth = $parents_language_of_birth;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMobileNumbers()
+    {
+        return $this->mobile_numbers;
+    }
+
+    /**
+     * @param mixed $mobile_numbers
+     */
+    public function setMobileNumbers($mobile_numbers)
+    {
+        $this->mobile_numbers = $mobile_numbers;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param mixed $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getConsentPhotos()
+    {
+        return $this->consent_photos;
+    }
+
+    /**
+     * @param mixed $consent_photos
+     */
+    public function setConsentPhotos($consent_photos)
+    {
+        $this->consent_photos = $consent_photos;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLivesWith()
+    {
+        return $this->lives_with;
+    }
+
+    /**
+     * @param mixed $lives_with
+     */
+    public function setLivesWith($lives_with)
+    {
+        $this->lives_with = $lives_with;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmergencyContact()
+    {
+        return $this->emergency_contact;
+    }
+
+    /**
+     * @param mixed $emergency_contact
+     */
+    public function setEmergencyContact($emergency_contact)
+    {
+        $this->emergency_contact = $emergency_contact;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmergencyContactPhone()
+    {
+        return $this->emergency_contact_phone;
+    }
+
+    /**
+     * @param mixed $emergency_contact_phone
+     */
+    public function setEmergencyContactPhone($emergency_contact_phone)
+    {
+        $this->emergency_contact_phone = $emergency_contact_phone;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFkApprenticeshipId()
+    {
+        return $this->fk_apprenticeship_id;
+    }
+
+    /**
+     * @param mixed $fk_apprenticeship_id
+     */
+    public function setFkApprenticeshipId($fk_apprenticeship_id)
+    {
+        $this->fk_apprenticeship_id = $fk_apprenticeship_id;
+    }
 }

@@ -5,12 +5,12 @@ class SchoolGraduation extends BaseEntity
     protected $conn;
     protected $table = 'school_graduations';
 
-    public $p_graduation_id;
-    public $graduation_name;
+    private $p_graduation_id;
+    private $graduation_name;
 
     public function __construct($db)
     {
-        $this->conn = $db;
+        parent::__construct($db);
     }
 
     public function create()
@@ -31,5 +31,37 @@ class SchoolGraduation extends BaseEntity
         printf("Error: %s.\n", $stmt->error);
 
         return false;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPGraduationId()
+    {
+        return $this->p_graduation_id;
+    }
+
+    /**
+     * @param mixed $p_graduation_id
+     */
+    public function setPGraduationId($p_graduation_id)
+    {
+        $this->p_graduation_id = $p_graduation_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGraduationName()
+    {
+        return $this->graduation_name;
+    }
+
+    /**
+     * @param mixed $graduation_name
+     */
+    public function setGraduationName($graduation_name)
+    {
+        $this->graduation_name = $graduation_name;
     }
 }

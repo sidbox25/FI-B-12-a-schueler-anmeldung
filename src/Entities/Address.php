@@ -6,10 +6,10 @@ class Address extends BaseEntity
     protected $conn;
     protected $table = 'addresses';
 
-    public $p_address_id;
-    public $address_details;
-    public $zipcode;
-    public $city;
+    private $p_address_id;
+    private $address_details;
+    private $zipcode;
+    private $city;
 
     public function __construct($db)
     {
@@ -53,5 +53,69 @@ class Address extends BaseEntity
     public function delete()
     {
         // Implement delete method
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPAddressId()
+    {
+        return $this->p_address_id;
+    }
+
+    /**
+     * @param mixed $p_address_id
+     */
+    public function setPAddressId($p_address_id)
+    {
+        $this->p_address_id = $p_address_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAddressDetails()
+    {
+        return $this->address_details;
+    }
+
+    /**
+     * @param mixed $address_details
+     */
+    public function setAddressDetails($address_details)
+    {
+        $this->address_details = $address_details;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getZipcode()
+    {
+        return $this->zipcode;
+    }
+
+    /**
+     * @param mixed $zipcode
+     */
+    public function setZipcode($zipcode)
+    {
+        $this->zipcode = $zipcode;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param mixed $city
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
     }
 }

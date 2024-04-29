@@ -1,20 +1,20 @@
 <?php
 
-class Apprenticeship {
+class Apprenticeship extends BaseEntity {
     protected $conn;
     protected $table = 'apprenticeships';
 
-    public $p_apprenticeship_id;
-    public $company_name;
-    public $contact_person;
-    public $company_phone_number;
-    public $company_fax;
-    public $company_mail;
-    public $fk_id_contract;
-    public $fk_occupation_name_id;
+    private $p_apprenticeship_id;
+    private $company_name;
+    private $contact_person;
+    private $company_phone_number;
+    private $company_fax;
+    private $company_mail;
+    private $fk_id_contract;
+    private $fk_occupation_name_id;
 
     public function __construct($db) {
-        $this->conn = $db;
+        parent::__construct($db);
     }
 
     public function create() {
@@ -52,5 +52,133 @@ class Apprenticeship {
         printf("Error: %s.\n", $stmt->error);
 
         return false;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPApprenticeshipId()
+    {
+        return $this->p_apprenticeship_id;
+    }
+
+    /**
+     * @param mixed $p_apprenticeship_id
+     */
+    public function setPApprenticeshipId($p_apprenticeship_id)
+    {
+        $this->p_apprenticeship_id = $p_apprenticeship_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompanyName()
+    {
+        return $this->company_name;
+    }
+
+    /**
+     * @param mixed $company_name
+     */
+    public function setCompanyName($company_name)
+    {
+        $this->company_name = $company_name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContactPerson()
+    {
+        return $this->contact_person;
+    }
+
+    /**
+     * @param mixed $contact_person
+     */
+    public function setContactPerson($contact_person)
+    {
+        $this->contact_person = $contact_person;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompanyPhoneNumber()
+    {
+        return $this->company_phone_number;
+    }
+
+    /**
+     * @param mixed $company_phone_number
+     */
+    public function setCompanyPhoneNumber($company_phone_number)
+    {
+        $this->company_phone_number = $company_phone_number;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompanyFax()
+    {
+        return $this->company_fax;
+    }
+
+    /**
+     * @param mixed $company_fax
+     */
+    public function setCompanyFax($company_fax)
+    {
+        $this->company_fax = $company_fax;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompanyMail()
+    {
+        return $this->company_mail;
+    }
+
+    /**
+     * @param mixed $company_mail
+     */
+    public function setCompanyMail($company_mail)
+    {
+        $this->company_mail = $company_mail;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFkIdContract()
+    {
+        return $this->fk_id_contract;
+    }
+
+    /**
+     * @param mixed $fk_id_contract
+     */
+    public function setFkIdContract($fk_id_contract)
+    {
+        $this->fk_id_contract = $fk_id_contract;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFkOccupationNameId()
+    {
+        return $this->fk_occupation_name_id;
+    }
+
+    /**
+     * @param mixed $fk_occupation_name_id
+     */
+    public function setFkOccupationNameId($fk_occupation_name_id)
+    {
+        $this->fk_occupation_name_id = $fk_occupation_name_id;
     }
 }
