@@ -1,12 +1,11 @@
 <?php
 
-class CompletedCourse extends BaseEntity {
-
+class StudentOption extends BaseEntity {
     protected $conn;
-    protected $table = 'completed_courses';
+    protected $table = 'student_options';
 
-    public $p_course_id;
-    public $course_name;
+    public $p_option_id;
+    public $option_name;
 
     public function __construct($db) {
         $this->conn = $db;
@@ -14,13 +13,13 @@ class CompletedCourse extends BaseEntity {
 
     public function create() {
         $query = "INSERT INTO $this->table
-                  SET course_name = :course_name";
+                  SET option_name = :option_name";
 
         $stmt = $this->conn->prepare($query);
 
-        $this->course_name = htmlspecialchars(strip_tags($this->course_name));
+        $this->option_name = htmlspecialchars(strip_tags($this->option_name));
 
-        $stmt->bindParam(':course_name', $this->course_name);
+        $stmt->bindParam(':option_name', $this->option_name);
 
         if($stmt->execute()) {
             return true;
