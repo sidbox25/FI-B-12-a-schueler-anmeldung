@@ -33,15 +33,17 @@ CREATE TABLE IF NOT EXISTS StudentRegistration.apprenticeships (
     contact_person VARCHAR(255), -- contact person/Ansprechpartner
     company_phone_number VARCHAR(20), -- phone number/telefonnummer
     company_fax VARCHAR(20), -- fax
-    company_mail VARCHAR(30) -- mail/E-Mail
+    company_mail VARCHAR(30), -- mail/E-Mail
+    fk_id_contract INT,
+    FOREIGN KEY (fk_id_contract) REFERENCES contract(p_id_contract),
     );
 
 
--- 4 --
-CREATE TABLE IF NOT EXISTS StudentRegistration.chosen_options (
-          p_chosen_option_id INT PRIMARY KEY AUTO_INCREMENT,
-          chosen_option INT(1) -- chosen option/1. Wahl oder 2. Wahl
-    );
+-- 4 -- todo: könnte sein, die Tabelle ist ein Duplikat einer anderen Tabelle
+-- CREATE TABLE IF NOT EXISTS StudentRegistration.chosen_options (
+--           p_chosen_option_id INT PRIMARY KEY AUTO_INCREMENT,
+--           chosen_option INT(1) -- chosen option/1. Wahl oder 2. Wahl
+--     );
 
 
 -- 5 --
@@ -103,7 +105,9 @@ CREATE TABLE IF NOT EXISTS students (
     consent_photos CHAR,
     lives_with VARCHAR (50),
     emergency_contact VARCHAR (50),
-    emergency_contact_phone VARCHAR (20)
+    emergency_contact_phone VARCHAR (20),
+    fk_apprenticeship_id INT,
+    FOREIGN KEY (fk_apprenticeship_id) REFERENCES apprenticeships(p_apprenticeship_id),
     );
 
 -- 12 --
