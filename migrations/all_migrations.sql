@@ -27,26 +27,6 @@ CREATE TABLE IF NOT EXISTS StudentRegistration.admins (
 
 
 -- 3 --
-CREATE TABLE IF NOT EXISTS StudentRegistration.apprenticeships (
-    p_apprenticeship_id INT PRIMARY KEY AUTO_INCREMENT,
-    company_name VARCHAR(255), -- company name/Name des Betriebs
-    contact_person VARCHAR(255), -- contact person/Ansprechpartner
-    company_phone_number VARCHAR(20), -- phone number/telefonnummer
-    company_fax VARCHAR(20), -- fax
-    company_mail VARCHAR(30), -- mail/E-Mail
-    fk_id_contract INT,
-    FOREIGN KEY (fk_id_contract) REFERENCES contract(p_id_contract),
-    );
-
-
--- 4 -- todo: könnte sein, die Tabelle ist ein Duplikat einer anderen Tabelle
--- CREATE TABLE IF NOT EXISTS StudentRegistration.chosen_options (
---           p_chosen_option_id INT PRIMARY KEY AUTO_INCREMENT,
---           chosen_option INT(1) -- chosen option/1. Wahl oder 2. Wahl
---     );
-
-
--- 5 --
 CREATE TABLE IF NOT EXISTS completed_courses (
     p_course_id INT,
     course_name VARCHAR(255),
@@ -54,11 +34,29 @@ CREATE TABLE IF NOT EXISTS completed_courses (
     );
 
 
--- 6 --
+-- 4 --
+/* todo: könnte sein, die Tabelle ist ein Duplikat einer anderen Tabelle
+CREATE TABLE IF NOT EXISTS StudentRegistration.chosen_options (
+          p_chosen_option_id INT PRIMARY KEY AUTO_INCREMENT,
+          chosen_option INT(1) -- chosen option/1. Wahl oder 2. Wahl
+    );
+*/
+
+
+-- 5 --
 CREATE TABLE IF NOT EXISTS contracts (
-      p_id_contract INT PRIMARY KEY AUTO_INCREMENT,
-      file BLOB
+     p_id_contract INT PRIMARY KEY AUTO_INCREMENT,
+     file BLOB
 );
+
+
+
+-- 6 --
+CREATE TABLE IF NOT EXISTS student_options (
+    p_option_id INT,
+    option_name VARCHAR(255),
+    PRIMARY KEY(p_option_id)
+    );
 
 
 -- 7 --
@@ -82,12 +80,18 @@ CREATE TABLE IF NOT EXISTS school_graduations (
     );
 
 -- 10 --
-CREATE TABLE IF NOT EXISTS student_options (
-    p_option_id INT,
-    option_name VARCHAR(255),
-    PRIMARY KEY(p_option_id)
+CREATE TABLE IF NOT EXISTS StudentRegistration.apprenticeships (
+    p_apprenticeship_id INT PRIMARY KEY AUTO_INCREMENT,
+    company_name VARCHAR(255), -- company name/Name des Betriebs
+    contact_person VARCHAR(255), -- contact person/Ansprechpartner
+    company_phone_number VARCHAR(20), -- phone number/telefonnummer
+    company_fax VARCHAR(20), -- fax
+    company_mail VARCHAR(30), -- mail/E-Mail
+    fk_id_contract INT,
+    fk_occupation_name_id INT,
+    FOREIGN KEY (fk_id_contract) REFERENCES contracts(p_id_contract),
+    FOREIGN KEY (fk_occupation_name_id) REFERENCES occupation_names(p_occupation_name_id)
     );
-
 
 -- 11 --
 CREATE TABLE IF NOT EXISTS students (
@@ -107,7 +111,7 @@ CREATE TABLE IF NOT EXISTS students (
     emergency_contact VARCHAR (50),
     emergency_contact_phone VARCHAR (20),
     fk_apprenticeship_id INT,
-    FOREIGN KEY (fk_apprenticeship_id) REFERENCES apprenticeships(p_apprenticeship_id),
+    FOREIGN KEY (fk_apprenticeship_id) REFERENCES apprenticeships(p_apprenticeship_id)
     );
 
 -- 12 --
@@ -142,9 +146,11 @@ CREATE TABLE IF NOT EXISTS school_visit(
     f_option_id INT,
     f_graduation_id INT,
     f_course_id INT,
+    fk_school_day_options_id INT,
     PRIMARY KEY(pf_students_id),
     FOREIGN KEY(pf_students_id) REFERENCES students(p_student_id),
     FOREIGN KEY(f_option_id) REFERENCES student_options(p_option_id),
     FOREIGN KEY(f_graduation_id) REFERENCES school_graduations(p_graduation_id),
-    FOREIGN KEY(f_course_id) REFERENCES completed_courses(p_course_id)
+    FOREIGN KEY(f_course_id) REFERENCES completed_courses(p_course_id),
+    FOREIGN KEY(fk_school_day_options_id) REFERENCES school_day_options(p_school_day_options_id)
     )
