@@ -7,7 +7,8 @@
 - und Boom, du hast es geschafft! 
 
 
-
+## Database ER
+![alt text](databaseER.png)
 
 
 # Festgelegte SQL-Naming Conventions
