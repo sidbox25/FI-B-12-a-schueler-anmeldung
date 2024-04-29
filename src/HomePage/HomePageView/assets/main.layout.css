@@ -65,7 +65,7 @@ main {
 .homepage-container {
     grid-area: footer;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(58, 28, 21, 0.87), rgba(116, 11, 121, 0.32), rgba(44, 32, 37, 0.66), rgba(231, 113, 58, 0.63)), url("https://berliner-abendblatt.de/wp-content/uploads/2023/03/Rahel-Hirsch-Schule-aussen.jpg") no-repeat center center fixed;
+    background: linear-gradient(to bottom, rgba(58, 28, 21, 0.87), rgba(116, 11, 121, 0.32), rgba(44, 32, 37, 0.66), rgba(26, 11, 6, 0.98)), url("https://berliner-abendblatt.de/wp-content/uploads/2023/03/Rahel-Hirsch-Schule-aussen.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
