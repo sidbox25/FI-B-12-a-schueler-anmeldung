@@ -2,7 +2,7 @@
 - Gehe auf Xampp Phpadmin
 - Klicke auf "import" in dem Upper Bar
 - Nachdem Klicken ein Fenster wird geöffnet, indem das Filesystem steht.
-- Suche nach all_migrations.zip und Klicke darauf
+- Suche nach all_migrations.sql und Klicke darauf
 - Ein "Go" Button ist am ende der Seite verfügbar, klicke darauf.
 - und Boom, du hast es geschafft! 
 

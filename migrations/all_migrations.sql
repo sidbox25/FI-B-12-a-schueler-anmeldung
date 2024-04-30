@@ -1,5 +1,6 @@
 -- create the database StudentRegistration --
 CREATE DATABASE IF NOT EXISTS StudentRegistration;
+USE StudentRegistration;
 
 -- init database bot user "schueler_anmeldung_user" --
 CREATE USER IF NOT EXISTS 'schueler_anmeldung_user'@'localhost' IDENTIFIED BY 'Password123$';
@@ -27,7 +28,7 @@ CREATE TABLE IF NOT EXISTS StudentRegistration.admins (
 
 
 -- 3 --
-CREATE TABLE IF NOT EXISTS completed_courses (
+CREATE TABLE IF NOT EXISTS StudentRegistration.completed_courses (
     p_course_id INT,
     course_name VARCHAR(255),
     PRIMARY KEY(p_course_id)
