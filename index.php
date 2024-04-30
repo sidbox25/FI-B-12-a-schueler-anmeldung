@@ -14,72 +14,73 @@
     </header>
     <?php
 
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-    include 'autoload.php';
-    include "vendor/autoload.php";
+        error_reporting(E_ALL);
+        ini_set('display_errors', 1);
+        include 'autoload.php';
+        include "vendor/autoload.php";
 
-    use src\GeschafftTab\Controller\GeschafftTabController;
-    use src\HomePage\HomePageController\HomePageController;
-    use src\StudentPersonalData\Controller\StudentPersonalDataController;
-    use src\StudentRegistration\Controller\StudentRegistrationApprenticeController;
-    use src\StudentRegistration\Controller\StudentRegistrationController;
-    use src\StudentRegistration\Controller\StudentSchoolVisitsController;
-    //use src\UploadPdf\Controller\StudentRegistrationApprenticeshipController;
-    use src\StudentResidence\Controller\StudentResidenceController;
-    use src\StudentAge\Controller\StudentAgeController;
-    use src\Core\Connector;
+        use src\GeschafftTab\Controller\GeschafftTabController;
+        use src\HomePage\HomePageController\HomePageController;
+        use src\StudentPersonalData\Controller\StudentPersonalDataController;
+        use src\StudentRegistration\Controller\StudentRegistrationApprenticeController;
+        use src\StudentRegistration\Controller\StudentRegistrationController;
+        use src\StudentRegistration\Controller\StudentSchoolVisitsController;
+        //use src\UploadPdf\Controller\StudentRegistrationApprenticeshipController;
+        use src\StudentResidence\Controller\StudentResidenceController;
+        use src\StudentAge\Controller\StudentAgeController;
+        use src\Core\Connector;
 
-    if ($_SERVER['REQUEST_URI'] === '/') {
-        $homePageController = new HomePageController();
-        $homePageController->showAction();
-    }
+        function handle_error(){
+            echo("Das ist eine Fehlermeldung!");
+        }
 
-    if ($_SERVER['REQUEST_URI'] === '/foo') {
-        $studentRegistrationController = new StudentRegistrationController();
-        $studentRegistrationController->StudentRegistrationViewAction();
-    }
-    if($_SERVER['REQUEST_URI'] === '/boo') {
-        $connection = (new Connector())->getConnection();
-        var_dump($connection);
-        $stm = $connection->prepare("INSERT INTO test.test2 (user) VALUES (:name) ");
-        $name = "sidney";
-        $stm->bindParam(':name',$name);
-        $stm->execute();
-    }
-    if($_SERVER['REQUEST_URI'] === '/schulbesuch') {
-        $studentSchoolVisitsController = new StudentSchoolVisitsController();
-        $studentSchoolVisitsController->showStudentSchoolVisitsAction();
-    }
-    if($_SERVER['REQUEST_URI'] === '/schultage') {
-        $studentSchoolVisitsController = new StudentRegistrationApprenticeController();
-        $studentSchoolVisitsController->studentRegistrationApprenticeViewAction();
-    }
-    if($_SERVER['REQUEST_URI'] === '/persoenliche_daten') {
-        $studentPersonalDataController = new StudentPersonalDataController();
-        $studentPersonalDataController->studentPersonalDataViewAction();
-    }
+        set_error_handler("handle_error");
 
-    if($_SERVER['REQUEST_URI'] === '/geschafft') {
-        $geschafftTabController = new GeschafftTabController();
-        $geschafftTabController->showGeschafftTabViewAction();
-    }
+        // Get path without parameters
+        $uri = parse_url($_SERVER['REQUEST_URI'])["path"];
 
-    if($_SERVER['REQUEST_URI'] === '/wohnort') {
-        $studentResidenceController = new StudentResidenceController();
-        $studentResidenceController->studentResidenceViewAction();
-    }
+        switch ($uri) {
 
-    if($_SERVER['REQUEST_URI'] === '/alter') {
-        $studentAgeController = new StudentAgeController();
-        $studentAgeController->studentAgeViewAction();
-    }
+            case '/':
+                $homePageController = new HomePageController();
+                $homePageController->showAction();
+                break;
+            
+            case '/schulbesuch':
+                $studentSchoolVisitsController = new StudentSchoolVisitsController();
+                $studentSchoolVisitsController->showStudentSchoolVisitsAction();
+                break;
 
-    // if ($_SERVER['REQUEST_URI'] === '/weiter') {
-    //$studentRegistrationApprenticeshipController = new \src\UploadPdf\Controller\StudentRegistrationApprenticeshipController();
-    //$studentRegistrationApprenticeshipController->StudentRegistrationApprenticeshipViewAction();
-    //}
+            case '/schultage':
+                $studentSchoolVisitsController = new StudentRegistrationApprenticeController();
+                $studentSchoolVisitsController->studentRegistrationApprenticeViewAction();    
+                break;
 
+            case '/persoenliche_daten':
+                $studentPersonalDataController = new StudentPersonalDataController();
+                $studentPersonalDataController->studentPersonalDataViewAction();    
+                break;
+
+            case '/wohnort':
+                $studentResidenceController = new StudentResidenceController();
+                $studentResidenceController->studentResidenceViewAction();    
+                break;
+
+            case '/alter':
+                $studentAgeController = new StudentAgeController();
+                $studentAgeController->studentAgeViewAction();    
+                break;
+
+            case '/geschafft':
+                $geschafftTabController = new GeschafftTabController();
+                $geschafftTabController->showGeschafftTabViewAction();
+                break;
+
+            default:
+                $homePageController = new HomePageController();
+                $homePageController->showAction();
+                break;
+        }
 
     ?>
 </div>
