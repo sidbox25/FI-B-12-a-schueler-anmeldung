@@ -1,12 +1,12 @@
 -- create the database StudentRegistration --
 CREATE DATABASE IF NOT EXISTS StudentRegistration;
+USE StudentRegistration;
 
 -- init database bot user "schueler_anmeldung_user" --
 CREATE USER IF NOT EXISTS 'schueler_anmeldung_user'@'localhost' IDENTIFIED BY 'Password123$';
 GRANT ALL PRIVILEGES ON StudentRegistration.* TO 'schueler_anmeldung_user'@'localhost';
 FLUSH PRIVILEGES;
 
-USE StudentRegistration;
 
 -- 1 --
 CREATE TABLE IF NOT EXISTS StudentRegistration.addresses (
