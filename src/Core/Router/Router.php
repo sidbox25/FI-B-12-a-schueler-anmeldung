@@ -11,6 +11,7 @@ use src\StudentRegistration\Controller\StudentSchoolVisitsController;
 use src\StudentResidence\Controller\StudentResidenceController;
 use src\StudentAge\Controller\StudentAgeController;
 use src\Core\Connector;
+use src\Error\E404\Controller\E404Controller;
 
 class Router 
 {
@@ -72,8 +73,9 @@ class Router
                 break;
 
             default:
-                $homePageController = new HomePageController();
-                $homePageController->showAction();
+                http_response_code(404);
+                $errorPageController = new E404Controller();
+                $errorPageController->view();
                 break;
         }
     }
