@@ -21,12 +21,6 @@
         include 'autoload.php';
         include "vendor/autoload.php";
 
-        function handle_error(){
-            echo("Das ist eine Fehlermeldung!");
-        }
-
-        set_error_handler("handle_error");
-
         // Get path without parameters
         $request = $_SERVER['REQUEST_URI'];
 
