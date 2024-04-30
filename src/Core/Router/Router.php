@@ -1,20 +1,8 @@
 <?php
 
 namespace src\Core\Router;
-use src\GeschafftTab\Controller\GeschafftTabController;
-use src\HomePage\HomePageController\HomePageController;
-use src\StudentPersonalData\Controller\StudentPersonalDataController;
-use src\StudentRegistration\Controller\StudentRegistrationApprenticeController;
-use src\StudentRegistration\Controller\StudentRegistrationController;
-use src\StudentRegistration\Controller\StudentSchoolVisitsController;
-//use src\UploadPdf\Controller\StudentRegistrationApprenticeshipController;
-use src\StudentResidence\Controller\StudentResidenceController;
-use src\StudentAge\Controller\StudentAgeController;
-use src\Core\Connector;
-use src\Error\E404\Controller\E404Controller;
 
-include 'autoload.php';
-include "vendor/autoload.php";
+use src\Error\E404\Controller\E404Controller;
 
 class Router
 {
@@ -31,24 +19,24 @@ class Router
         return self::$instance;
     }
 
-    public function addRoute($uri, $controller, $action, $methods = ['GET'])
+    public function addRoute($uri, $controller, $action)
     {
-        $this->routes[$uri] = ['controller' => $controller, 'action' => $action, 'methods' => $methods];
+        $this->routes[$uri] = ['controller' => $controller, 'action' => $action];
     }
 
-    public function route($request_uri, $request_method)
+    public function route($request_uri)
     {
         $uri = parse_url($request_uri)["path"];
 
         if (array_key_exists($uri, $this->routes)) {
             $route = $this->routes[$uri];
-            if (in_array($request_method, $route['methods'])) {
+
                 $controllerName = $route['controller'];
                 $action = $route['action'];
                 $controller = new $controllerName();
                 $controller->$action();
                 return;
-            }
+
         }
 
         http_response_code(404);

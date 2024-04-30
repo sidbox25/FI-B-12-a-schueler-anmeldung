@@ -23,12 +23,12 @@
 
     $router = Router::getInstance();
 
-    $router->addRoute('/', 'src\HomePage\HomePageController\HomePageController', 'showAction', ['GET']);
-    $router->addRoute('/persoenliche_daten', 'src\StudentPersonalData\Controller\StudentPersonalDataController', 'studentPersonalDataViewAction', ['POST','GET']);
-    $router->addRoute('/wohnort', 'src\StudentResidence\Controller\StudentResidenceController', 'studentResidenceViewAction', ['GET']);
-    $router->addRoute('/alter', '\src\StudentAge\Controller\StudentAgeController', 'showViewAction', ['GET']);
-    $router->addRoute('/schulbesuch', 'src\StudentRegistration\Controller\StudentSchoolVisitsController', 'showStudentSchoolVisitsAction', ['GET']);
-    $router->addRoute('/geschafft', '\src\GeschafftTab\Controller\GeschafftTabController', 'showGeschafftTabViewAction', ['GET']);
+    $router->addRoute('/', 'src\HomePage\HomePageController\HomePageController', 'showAction');
+    $router->addRoute('/persoenliche_daten', 'src\StudentPersonalData\Controller\StudentPersonalDataController', 'studentPersonalDataViewAction');
+    $router->addRoute('/wohnort', 'src\StudentResidence\Controller\StudentResidenceController', 'studentResidenceViewAction');
+    $router->addRoute('/alter', '\src\StudentAge\Controller\StudentAgeController', 'showViewAction');
+    $router->addRoute('/schulbesuch', 'src\StudentRegistration\Controller\StudentSchoolVisitsController', 'showStudentSchoolVisitsAction');
+    $router->addRoute('/geschafft', '\src\GeschafftTab\Controller\GeschafftTabController', 'showGeschafftTabViewAction');
 
 
     $router->route($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
