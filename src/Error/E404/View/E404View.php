@@ -8,7 +8,7 @@ class E404View
 {
     public function createErrorPage()
     {
-        echo file_get_contents("src\Error\E404\View\E404View.html");
+        echo file_get_contents("src/Error/E404/View/E404View.html");
     }
 }
 

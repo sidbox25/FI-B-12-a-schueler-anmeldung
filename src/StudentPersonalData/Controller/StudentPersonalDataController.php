@@ -12,8 +12,14 @@ class StudentPersonalDataController
         $StudentPersonalDataBusiness = $StudentPersonalDataBusinessFactory->createStudentPersonalDataBusiness();
 
        $saveFiles = $StudentPersonalDataBusiness->saveUploadedFile();
+
         
         $this->view($StudentPersonalDataBusiness->getDaten()); #sortof like a echo
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            var_dump($_POST);
+        }
+
     }
 
     public function view($daten)

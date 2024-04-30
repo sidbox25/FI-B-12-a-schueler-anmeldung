@@ -11,7 +11,7 @@ class StudentPersonalDataView
 <div class="header_personal_data"></div>
 <div class="personal_data_body">
 
-  <form class="personal_data_form">
+  <form class="personal_data_form" method="post">
   <h4>Personal Daten</h4>
   <label for="fname">Vorname</label>
   <input type="text" id="fname" name="firstname" placeholder="Vorname...">  
@@ -46,15 +46,15 @@ class StudentPersonalDataView
       <label for="permission">Zustimmung zur Verwendung</label>
       <label>Ja, die Rahel-Hirsch-Schule darf Fotos von mir verwenden</label>
       <label>Ich erteile hiermit der Rahel-Hirsch-Schule die jederzeit widerrufliche Erlaubnis, für schulische Zwecke (z.B. auf der Webseite der Schule, in Schulbroschüren, etc.) Fotos oder Abbildungen, auf denen ich zu erkennen bin, zu verwenden</label>
-      <input type="checkbox" id="permission" name="permission" checked>
+      <input type="checkbox" id="permission" name="permission">
       </div>
 
     <a class="prev-page-btn" href="/">
     <img src="/src/Core/assets/images/prev-arrow.png" class="prev-page" alt="Vorherige Seite">
     </a>
-    <a class="weiter-schoolvisit-btn" href="/wohnort">
+    <button class="weiter-schoolvisit-btn" type="submit">
         <img src="/src/Core/assets/images/next-arrow.png" class="next-page" alt="Nächste Seite">
-    </a>
+    </button>
    
   </form>
   </div>
@@ -132,6 +132,12 @@ height: 2%;
     .prev-page {
       width: 5%;
       height: auto;
+      }
+    
+    #permission {
+    height: 2rem;
+    width: 2rem;
+    }
     
 </style>
 

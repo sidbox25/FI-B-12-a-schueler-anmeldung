@@ -14,18 +14,24 @@
     </header>
     <?php
 
-        use src\Core\Router\Router;
+    use src\Core\Router\Router;
 
-        error_reporting(E_ALL);
-        ini_set('display_errors', 1);
-        include 'autoload.php';
-        include "vendor/autoload.php";
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    include 'autoload.php';
+    include "vendor/autoload.php";
 
-        // Get path without parameters
-        $request = $_SERVER['REQUEST_URI'];
+    $router = Router::getInstance();
 
-        $router = Router::getInstance();
-        $router->route($request);
+    $router->addRoute('/', 'src\HomePage\HomePageController\HomePageController', 'showAction', ['GET']);
+    $router->addRoute('/persoenliche_daten', 'src\StudentPersonalData\Controller\StudentPersonalDataController', 'studentPersonalDataViewAction', ['POST','GET']);
+    $router->addRoute('/wohnort', 'src\StudentResidence\Controller\StudentResidenceController', 'studentResidenceViewAction', ['GET']);
+    $router->addRoute('/alter', '\src\StudentAge\Controller\StudentAgeController', 'showViewAction', ['GET']);
+    $router->addRoute('/schulbesuch', 'src\StudentRegistration\Controller\StudentSchoolVisitsController', 'showStudentSchoolVisitsAction', ['GET']);
+    $router->addRoute('/geschafft', '\src\GeschafftTab\Controller\GeschafftTabController', 'showGeschafftTabViewAction', ['GET']);
+
+
+    $router->route($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
 
     ?>
 </div>

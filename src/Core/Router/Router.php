@@ -13,11 +13,17 @@ use src\StudentAge\Controller\StudentAgeController;
 use src\Core\Connector;
 use src\Error\E404\Controller\E404Controller;
 
-class Router 
+include 'autoload.php';
+include "vendor/autoload.php";
+
+class Router
 {
     private static $instance = null;
+    private $routes = [];
 
-    public static function getInstance() 
+    private function __construct() {}
+
+    public static function getInstance()
     {
         if (self::$instance == null) {
             self::$instance = new Router();
@@ -25,64 +31,29 @@ class Router
         return self::$instance;
     }
 
-    /**
-     * when called, route method calls the contructor of the controller
-     * responsible for the given parameter $uri
-     * @param uri String
-     **/
-    public function route($request_uri)
+    public function addRoute($uri, $controller, $action, $methods = ['GET'])
     {
+        $this->routes[$uri] = ['controller' => $controller, 'action' => $action, 'methods' => $methods];
+    }
 
-        $uri = parse_url($_SERVER['REQUEST_URI'])["path"];
+    public function route($request_uri, $request_method)
+    {
+        $uri = parse_url($request_uri)["path"];
 
-        switch ($uri) {
-
-            case '/':
-                $homePageController = new HomePageController();
-                $homePageController->showAction();
-                break;
-
-            case '/persoenliche_daten':
-                $studentPersonalDataController = new StudentPersonalDataController();
-                $studentPersonalDataController->studentPersonalDataViewAction();    
-                break;
-
-            case '/wohnort':
-                $studentResidenceController = new StudentResidenceController();
-                $studentResidenceController->studentResidenceViewAction();    
-                break;
-            
-            case '/alter':
-                $studentAgeController = new StudentAgeController();
-                $studentAgeController->showViewAction();    
-                break;
-            
-            // Es fehlt noch die Ausbildungsseite
-            //[...]
-            
-            case '/schulbesuch':
-                $studentSchoolVisitsController = new StudentSchoolVisitsController();
-                $studentSchoolVisitsController->showStudentSchoolVisitsAction();
-                break;
-            
-            case '/geschafft':
-                $geschafftTabController = new GeschafftTabController();
-                $geschafftTabController->showGeschafftTabViewAction();
-                break;
-
-            /*
-            case '/schultage':
-                $studentSchoolVisitsController = new StudentRegistrationApprenticeController();
-                $studentSchoolVisitsController->studentRegistrationApprenticeViewAction();    
-                break;
-            */
-
-            default:
-                http_response_code(404);
-                $errorPageController = new E404Controller();
-                $errorPageController->view();
-                break;
+        if (array_key_exists($uri, $this->routes)) {
+            $route = $this->routes[$uri];
+            if (in_array($request_method, $route['methods'])) {
+                $controllerName = $route['controller'];
+                $action = $route['action'];
+                $controller = new $controllerName();
+                $controller->$action();
+                return;
+            }
         }
+
+        http_response_code(404);
+        $errorPageController = new E404Controller();
+        $errorPageController->view();
     }
 }
 
