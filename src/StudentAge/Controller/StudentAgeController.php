@@ -3,9 +3,10 @@
 namespace src\StudentAge\Controller;
 use src\StudentAge\Business\StudentAgeBusinessFactory;
 use src\StudentAge\View\StudentAgeView;
-class StudentAgeController
+use src\Core\Controller;
+class StudentAgeController implements Controller
 {
-    public function studentAgeViewAction()
+    public function showViewAction()
     {
         $StudentAgeBusinessFactory = new StudentAgeBusinessFactory();
 

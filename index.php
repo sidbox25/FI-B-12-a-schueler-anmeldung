@@ -14,21 +14,12 @@
     </header>
     <?php
 
+        use src\Core\Router\Router;
+
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
         include 'autoload.php';
         include "vendor/autoload.php";
-
-        use src\GeschafftTab\Controller\GeschafftTabController;
-        use src\HomePage\HomePageController\HomePageController;
-        use src\StudentPersonalData\Controller\StudentPersonalDataController;
-        use src\StudentRegistration\Controller\StudentRegistrationApprenticeController;
-        use src\StudentRegistration\Controller\StudentRegistrationController;
-        use src\StudentRegistration\Controller\StudentSchoolVisitsController;
-        //use src\UploadPdf\Controller\StudentRegistrationApprenticeshipController;
-        use src\StudentResidence\Controller\StudentResidenceController;
-        use src\StudentAge\Controller\StudentAgeController;
-        use src\Core\Connector;
 
         function handle_error(){
             echo("Das ist eine Fehlermeldung!");
@@ -37,50 +28,10 @@
         set_error_handler("handle_error");
 
         // Get path without parameters
-        $uri = parse_url($_SERVER['REQUEST_URI'])["path"];
+        $request = $_SERVER['REQUEST_URI'];
 
-        switch ($uri) {
-
-            case '/':
-                $homePageController = new HomePageController();
-                $homePageController->showAction();
-                break;
-            
-            case '/schulbesuch':
-                $studentSchoolVisitsController = new StudentSchoolVisitsController();
-                $studentSchoolVisitsController->showStudentSchoolVisitsAction();
-                break;
-
-            case '/schultage':
-                $studentSchoolVisitsController = new StudentRegistrationApprenticeController();
-                $studentSchoolVisitsController->studentRegistrationApprenticeViewAction();    
-                break;
-
-            case '/persoenliche_daten':
-                $studentPersonalDataController = new StudentPersonalDataController();
-                $studentPersonalDataController->studentPersonalDataViewAction();    
-                break;
-
-            case '/wohnort':
-                $studentResidenceController = new StudentResidenceController();
-                $studentResidenceController->studentResidenceViewAction();    
-                break;
-
-            case '/alter':
-                $studentAgeController = new StudentAgeController();
-                $studentAgeController->studentAgeViewAction();    
-                break;
-
-            case '/geschafft':
-                $geschafftTabController = new GeschafftTabController();
-                $geschafftTabController->showGeschafftTabViewAction();
-                break;
-
-            default:
-                $homePageController = new HomePageController();
-                $homePageController->showAction();
-                break;
-        }
+        $router = Router::getInstance();
+        $router->route($request);
 
     ?>
 </div>
