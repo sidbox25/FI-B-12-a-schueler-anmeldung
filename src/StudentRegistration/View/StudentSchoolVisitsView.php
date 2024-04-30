@@ -82,8 +82,8 @@ class StudentSchoolVisitsView
     <a class="prev-page-btn" href="/">
         <img src="/src/Core/assets/images/prev-arrow.png" class="prev-page" alt="Vorherige Seite">
     </a>
-    <a class="weiter-schoolvisit-btn" href="/schultage">
-        <img src="/src/Core/assets/images/next-arrow.png" class="next-page" alt="Nächste Seite">
+    <a class="weiter-schoolvisit-btn" href="/geschafft">
+    <img src="/src/Core/assets/images/next-arrow.png" class="next-page" alt="Nächste Seite">
     </a>
 </form>
 </body>

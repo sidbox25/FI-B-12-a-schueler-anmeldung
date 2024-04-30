@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="main-container">
-    <header>
+    <header class="fade-in-bck">
         <img id="logo" src="src/HomePage/HomePageView/assets/logo.png"">
         <h1 class="header-text">Anmeldung zur Ausbildung als MFA / ZFA an der Rahel-Hirsch-Schule</h1>
     </header>

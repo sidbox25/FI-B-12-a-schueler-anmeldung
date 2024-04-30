@@ -36,7 +36,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to right, rgba(126, 123, 123, 0.43), #7e7e7e), url("cool-background.png");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(142, 10, 157, 0.68)), url("cool-background.png");
     height: 100%;
     background-size: cover;
 }
@@ -65,7 +65,7 @@ main {
 .homepage-container {
     grid-area: footer;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(205, 103, 67, 0.68), rgba(19, 18, 18, 0.66), rgba(44, 32, 37, 0.66), rgba(109, 66, 90, 0.63)), url("https://berliner-abendblatt.de/wp-content/uploads/2023/03/Rahel-Hirsch-Schule-aussen.jpg") no-repeat center center fixed;
+    background: linear-gradient(to bottom, rgba(58, 28, 21, 0.87), rgba(116, 11, 121, 0.32), rgba(44, 32, 37, 0.66), rgba(26, 11, 6, 0.98)), url("https://berliner-abendblatt.de/wp-content/uploads/2023/03/Rahel-Hirsch-Schule-aussen.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -75,4 +75,88 @@ main {
     align-items: center;
     justify-content: center;
 }
+
+.rotate-center {
+    -webkit-animation: rotate-center 1s ease-in-out both;
+    animation: rotate-center 1s ease-in-out both;
+}
+
+@-webkit-keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.scale-up-center {
+    -webkit-animation: scale-up-center 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.fade-in-bck {
+    -webkit-animation: fade-in-bck 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in-bck 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes fade-in-bck {
+    0% {
+        -webkit-transform: translateZ(80px);
+        transform: translateZ(80px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+@keyframes fade-in-bck {
+    0% {
+        -webkit-transform: translateZ(80px);
+        transform: translateZ(80px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+
 
