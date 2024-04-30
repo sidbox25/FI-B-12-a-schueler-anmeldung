@@ -41,16 +41,6 @@ class Router
                 $homePageController = new HomePageController();
                 $homePageController->showAction();
                 break;
-            
-            case '/schulbesuch':
-                $studentSchoolVisitsController = new StudentSchoolVisitsController();
-                $studentSchoolVisitsController->showStudentSchoolVisitsAction();
-                break;
-
-            case '/schultage':
-                $studentSchoolVisitsController = new StudentRegistrationApprenticeController();
-                $studentSchoolVisitsController->studentRegistrationApprenticeViewAction();    
-                break;
 
             case '/persoenliche_daten':
                 $studentPersonalDataController = new StudentPersonalDataController();
@@ -61,16 +51,31 @@ class Router
                 $studentResidenceController = new StudentResidenceController();
                 $studentResidenceController->studentResidenceViewAction();    
                 break;
-
+            
             case '/alter':
                 $studentAgeController = new StudentAgeController();
                 $studentAgeController->showViewAction();    
                 break;
-
+            
+            // Es fehlt noch die Ausbildungsseite
+            //[...]
+            
+            case '/schulbesuch':
+                $studentSchoolVisitsController = new StudentSchoolVisitsController();
+                $studentSchoolVisitsController->showStudentSchoolVisitsAction();
+                break;
+            
             case '/geschafft':
                 $geschafftTabController = new GeschafftTabController();
                 $geschafftTabController->showGeschafftTabViewAction();
                 break;
+
+            /*
+            case '/schultage':
+                $studentSchoolVisitsController = new StudentRegistrationApprenticeController();
+                $studentSchoolVisitsController->studentRegistrationApprenticeViewAction();    
+                break;
+            */
 
             default:
                 http_response_code(404);
