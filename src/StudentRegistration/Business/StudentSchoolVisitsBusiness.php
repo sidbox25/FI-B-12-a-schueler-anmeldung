@@ -3,19 +3,13 @@
 namespace src\StudentRegistration\Business;
 class StudentSchoolVisitsBusiness
 {
-
-    public function __construct()
-    {
-    }
-
-    public function foo(): string
-    {
-        return "bar";
-    }
-
-    public function save(array $data)
-    {
-        //todo wait for the User entity and DB Connection
-
+    public function buildTransfer(){
+        $studentSchoolVisitTransfer = new StudentSchoolVisitsTransfer();
+        if(isset($_GET)) {
+            $studentSchoolVisitTransfer->setGraduationName($_GET['schulabschluss']);
+            $studentSchoolVisitTransfer->setLastVisitedSchool($_GET['last_school']);
+        }
+        
+        
     }
 }

@@ -10,13 +10,6 @@ class StudentSchoolVisitsTransfer
     private $last_finished_apprenticeship;
     private $option_name;
 
-    function __construct($graduation_name, $last_visited_school, $graduation_year, $last_finished_apprenticeship, $option_name) {
-        $this->graduation_name = $graduation_name;
-        $this->last_visited_school = $last_visited_school;
-        $this->graduation_year = $graduation_year;
-        $this->last_finished_apprenticeship = $last_finished_apprenticeship;
-        $this->option_name = $option_name;
-    }
 
     // Getter methods
     public function getGraduationName() {

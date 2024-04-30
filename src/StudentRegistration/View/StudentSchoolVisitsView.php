@@ -9,7 +9,7 @@ class StudentSchoolVisitsView
     {
         echo '<body>
 
-<form>
+<form method="GET">
     <h1>Schulbesuch</h1>
     <p id = "bisheriger_schulbesuch">Bisherige Schulbesuche</p>
 
