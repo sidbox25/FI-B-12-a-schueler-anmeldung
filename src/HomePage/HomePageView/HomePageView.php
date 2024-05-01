@@ -10,9 +10,13 @@ class HomePageView
         echo '
         <main>
         <div class="homepage-container scale-up-center">
-            <a class="login-btn scale-up-center" href="/schulbesuch">
-                Anmelden
-            </a>
+          <a class="button" href="/datenschutz">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Anmelden
+          </a>
          </div>
         </main>
 
