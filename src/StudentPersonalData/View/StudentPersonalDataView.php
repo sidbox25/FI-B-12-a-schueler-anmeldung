@@ -12,11 +12,11 @@ class StudentPersonalDataView
 <div class="personal_data_body">
 
   <form class="personal_data_form" method="post">
-  <h4>Personal Daten</h4>
+  <h4>Persoenliche Daten</h4>
   <label for="fname">Vorname</label>
   <input type="text" id="fname" name="firstname" placeholder="Vorname...">  
   
-  <label for="lname">Vorname</label>
+  <label for="lname">Nachname</label>
   <input type="text" id="lname" name="lastname" placeholder="Nachname...">
 
   <label for="email_address">Email </label>
@@ -49,13 +49,15 @@ class StudentPersonalDataView
       <input type="checkbox" id="permission" name="permission">
       </div>
 
-    <a class="prev-page-btn" href="/">
-    <img src="/src/Core/assets/images/prev-arrow.png" class="prev-page" alt="Vorherige Seite">
-    </a>
-    <button class="weiter-schoolvisit-btn" type="submit">
-        <img src="/src/Core/assets/images/next-arrow.png" class="next-page" alt="Nächste Seite">
-    </button>
-   
+        <div class="back-next-page-bar">
+        <a class="next-back-page" href="/datenschutz">
+            <img src="/src/Core/assets/images/prev-arrow.png" class="next-back-page" alt="Vorherige Seite">
+        </a>
+        <a class="next-back-page" href="/wohnort" onclick="document.getElementById(\'form-datenschutz\').submit();">' .
+            '<img src="/src/Core/assets/images/next-arrow.png" class="next-back-page" alt="Nächste Seite">' .
+            '</a>' .
+            '</div>
+  
   </form>
   </div>
 </div>
@@ -100,19 +102,7 @@ height: 2%;
   .personal_data_form > fieldset {
     grid-column: span 2;
   }  
-  .personal_data_form > a {
-    background-color: rgb(206,107,45);
-    color: white;
-    border: 5px solid #f8f6f6;;
-    border-radius: 5px;
-    font-size:  1.3rem;
-    font-weight: bold;
-    padding: 1.5rem 1.2rem 1.5rem 1.2rem;
-    text-align: center;
-    text-decoration: none;
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
+  
   .personal_data_form > textarea {
     min-height: 3em;
     }
@@ -138,6 +128,20 @@ height: 2%;
     height: 2rem;
     width: 2rem;
     }
+ 
+.back-next-page-bar {
+    display: flex;
+    justify-content: space-between;
+    height: 10%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.next-back-page {
+    height: 4rem !important;
+    width: 4rem !important;
+
+}
     
 </style>
 
