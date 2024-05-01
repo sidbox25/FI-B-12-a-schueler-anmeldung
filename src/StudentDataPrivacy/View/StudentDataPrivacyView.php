@@ -8,30 +8,6 @@ class StudentDataPrivacyView
     public function createStudentDataPrivacyForm()
     {
         echo '
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anmeldung zur Ausbildung als MFA / ZFA an der Rahel-Hirsch-Schule</title>
-</head>
-<body>
-
-    <?php
-    // Überprüfe, ob das Formular abgesendet wurde
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Überprüfe, ob die Checkbox gesetzt ist
-        if (isset($_POST["privacyCheckbox"]) && $_POST["privacyCheckbox"] == "on") {
-            // Leite zur nächsten Seite weiter (Weiterleitung zu Seite 2 ersetzen)
-            header("Location: https://www.google.com");
-            exit();
-        } else {
-            // Zeige eine Warnung, wenn die Checkbox nicht gesetzt ist
-            echo "Bitte stimmen Sie der Datenschutzerklärung zu.";
-        }
-    }
-    ?>
-
     <div>
         <p>
         Wir freuen uns, dass Sie sich an der Rahel-Hirsch-Schule zu einer Ausbildung anmelden möchten!
@@ -46,16 +22,30 @@ class StudentDataPrivacyView
         <h1>Datenschutz</h1>
 
         <!-- Formular mit Textausgabe und Checkbox -->
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form id="form-datenschutz" method="post">
             <input type="checkbox" name="privacyCheckbox" id="privacyCheckbox"> Ich nehme die <a href="deine_datei.pdf" target="_blank">Datenschutzerklärung</a> zur Kenntnis und willige der elektronischen Datenverarbeitung zu.
-            <input type="submit" value="Weiter">    
+            <p>Das ist Seite 1 von 7. Bitte füllen Sie alle Seiten aus. Klicken Sie auf weiter.</p>
+            
+        <div class="back-next-page-bar">
+        <a class="next-back-page" href="/">
+            <img src="/src/Core/assets/images/prev-arrow.png" class="next-back-page" alt="Vorherige Seite">
+        </a>
+        <a class="next-back-page" href="/persoenliche_daten" onclick="document.getElementById(\'form-datenschutz\').submit();">' .
+            '<img src="/src/Core/assets/images/next-arrow.png" class="next-back-page" alt="Nächste Seite">' .
+            '</a>' .
+        '</div>
+            
         </form>
-        <p><?php echo "Das ist Seite 1 von 7. Bitte füllen Sie alle Seiten aus. Klicken Sie auf weiter."; ?></p>
+        
     </div>
+<style>
+.next-back-page {
+    height: 20% !important;
+    width: 20% !important;
 
-</body>
-</html>
+}
 
+</style>
         ';
     }
 }
