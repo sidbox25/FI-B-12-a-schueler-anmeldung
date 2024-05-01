@@ -10,12 +10,17 @@ class StudentDataPrivacyController
     public function showAction()
     {
         $this->view(); #sortof like a echo
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            var_dump($_POST);
+        }
+
     }
 
     public function view()
     {
-        $mainView = new View();
-        $mainView->createStudentDataPrivacyForm();
+        $studentDataPrivacyView = new View\StudentDataPrivacyView();
+        $studentDataPrivacyView->createStudentDataPrivacyForm();
     }
 
 }
